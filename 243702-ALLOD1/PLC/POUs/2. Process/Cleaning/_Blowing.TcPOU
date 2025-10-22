@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="_Blowing" Id="{9a43c074-af51-4cdb-8261-23a4740c3cc1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM _Blowing
+VAR_INPUT
+	i_bStart							:BOOL;
+	i_bPause							:BOOL;
+	i_bStepFinished						:BOOL;
+	i_bSkipStep							:BOOL;
+	i_bDischargeOpened					:BOOL;
+	i_bDischargeClosed					:BOOL;
+	i_iMixer							:INT;
+	i_rMixerSpeed						:REAL;
+	i_iChopper							:INT;
+	i_iTimeStep1						:ST_HMI_Time; 		
+END_VAR
+VAR
+	iStep						:INT;
+	iPrevStep					:INT;
+	Seq_Time					:ARRAY[0..9] OF TIME;
+	tonStepTime					:TON;
+END_VAR
+VAR_OUTPUT
+	q_bRunning						:BOOL;
+	q_bFinished						:BOOL;
+	q_stCmd							:ST_ProcessCmd;
+	q_bDisOpenReq					:BOOL;
+	q_tStepTime						:TIME;
+	q_Seq_TON						:ARRAY[0..9] OF FB_TONP;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Recipe Parameters
+Seq_Time[1]:=DINT_TO_TIME(i_iTimeStep1.mins)*60000 + 
+			 DINT_TO_TIME(i_iTimeStep1.sec)*1000;
+
+		 
+q_Seq_TON[1](IN:=iStep=100,PAUSE:=i_bPause,PT:=Seq_Time[1]);
+
+q_bRunning:=iStep<>0;
+
+IF i_bSkipStep THEN
+	iStep:=1000;
+END_IF
+
+IF NOT i_bStart THEN
+	iStep:=0;
+END_IF
+
+CASE iStep OF
+	0:
+		IF i_bStart THEN
+			q_bFinished:=FALSE;
+			iStep:=50;
+		END_IF
+		
+		IF iStep <> 0 THEN
+			iPrevStep:=0;
+		END_IF
+	
+	//Wait for open discharge valve to be open
+	50:
+		IF i_bDischargeOpened THEN
+			iStep:=100;
+		END_IF
+		IF iStep <> 50 THEN
+			iPrevStep:=50;
+		END_IF
+	
+	//Blowing time filter housing
+	100:
+		IF q_Seq_TON[1].Q THEN
+			iStep:=1000;
+		END_IF
+		
+		IF iStep <> 100 THEN
+			iPrevStep:=100;
+		END_IF
+	1000:
+		q_bFinished:=TRUE;
+		IF i_bStepFinished THEN
+			iStep:=0;
+		END_IF
+END_CASE
+
+q_bDisOpenReq:=F_StepCMP(iStep,50,0,0,0,0,0,0,0,0,0);
+
+IF F_StepCMP(iStep,50,0,0,0,0,0,0,0,0,0) THEN
+	q_stCmd.bDischargeClose:=FALSE;
+	q_stCmd.bDischargeOpen:=TRUE;
+ELSE
+	q_stCmd.bDischargeClose:=FALSE;
+	q_stCmd.bDischargeOpen:=FALSE;
+END_IF
+
+IF F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND NOT i_bPause THEN
+	q_stCmd.iMixer:=i_iMixer;
+	q_stCmd.rMixerSpeed:=i_rMixerSpeed;
+ELSE
+	q_stCmd.iMixer:=0;
+	q_stCmd.rMixerSpeed:=0;
+END_IF
+
+IF F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND NOT i_bPause THEN
+	q_stCmd.iChopper:=i_iChopper;
+ELSE
+	q_stCmd.iChopper:=0;
+END_IF
+
+q_stCmd.bAir:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0);
+q_stCmd.bWater:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+q_stCmd.bColdWater:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+q_stCmd.bWarmWater:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+q_stCmd.bProcessWater:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+
+q_stCmd.bTightAir:=F_StepCMP(iStep,50,100,0,0,0,0,0,0,0,0);
+q_stCmd.bChopper1_Air:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+q_stCmd.bChopper2_Air:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+
+q_stCmd.bChopper1_Water:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0);
+q_stCmd.bChopper2_Water:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0);
+
+
+//Statistic and Status
+tonStepTime(IN:=q_bRunning,PT:=T#5H);
+q_tStepTime:=tonStepTime.ET;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

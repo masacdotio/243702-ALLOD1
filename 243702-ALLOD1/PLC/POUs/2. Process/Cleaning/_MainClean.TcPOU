@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="_MainClean" Id="{adc5e907-2029-43dc-8eae-d1c38de86733}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM _MainClean
+VAR_INPUT
+	i_bStart					:BOOL;
+	i_bPause					:BOOL;
+	i_bStepFinished				:BOOL;
+	i_bSkipStep					:BOOL;
+	i_bDischargeOpened			:BOOL;
+	i_bDischargeClosed			:BOOL;
+	i_iMedium					:INT;
+	i_iDetergent				:INT;
+	i_bDetergentConfirm			:BOOL;
+	i_bDischargeConfirm			:BOOL;
+	i_iMixer					:INT;
+	i_rMixerSpeed				:REAL;
+	i_iChopper					:INT;
+	i_iTimeStep1				:ST_HMI_Time;
+	i_iTimeStep2				:ST_HMI_Time;
+	i_iTimeStep3				:ST_HMI_Time;
+
+END_VAR
+VAR
+	iStep						:INT;
+	iPrevStep					:INT;
+	Seq_Time					:ARRAY[0..9] OF TIME;
+	tonStepTime					:TON;
+END_VAR
+VAR_OUTPUT
+	q_bRunning					:BOOL;
+	q_bFinished					:BOOL;
+	q_stCmd						:ST_ProcessCmd;
+	q_bDetergentReq				:BOOL;
+	q_bDisOpenReq				:BOOL;
+	q_bDisCloseReq				:BOOL;
+	q_bDischargeReq				:BOOL;
+	q_tStepTime					:TIME;
+	q_Seq_TON					:ARRAY[0..9] OF FB_TONP;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Recipe Parameters
+Seq_Time[1]:=DINT_TO_TIME(i_iTimeStep1.mins)*60000 + 
+			 DINT_TO_TIME(i_iTimeStep1.sec)*1000;
+Seq_Time[2]:=DINT_TO_TIME(i_iTimeStep2.mins)*60000 + 
+			 DINT_TO_TIME(i_iTimeStep2.sec)*1000;
+Seq_Time[3]:=DINT_TO_TIME(i_iTimeStep3.mins)*60000 + 
+			 DINT_TO_TIME(i_iTimeStep3.sec)*1000;
+
+			 
+q_Seq_TON[1](IN:=iStep=100,PAUSE:=i_bPause,PT:=Seq_Time[1]);
+q_Seq_TON[2](IN:=iStep=200,PAUSE:=i_bPause,PT:=Seq_Time[2]);
+q_Seq_TON[3](IN:=iStep=300,PAUSE:=i_bPause,PT:=Seq_Time[3]);
+
+
+q_bRunning:=iStep<>0;
+
+IF i_bSkipStep THEN
+	iStep:=1000;
+END_IF
+
+IF NOT i_bStart THEN
+	iStep:=0;
+END_IF
+
+CASE iStep OF
+	0:
+		IF i_bStart THEN
+			q_bFinished:=FALSE;
+			iStep:=50;
+		END_IF
+		
+		IF iStep <> 0 THEN
+			iPrevStep:=0;
+		END_IF
+	
+	//Wait for discharge flap top be closed
+	50:
+		IF i_bDischargeClosed THEN
+			iStep:=100;
+		END_IF
+	
+	//Filling time
+	100:
+		IF q_Seq_TON[1].Q THEN
+			iStep:=150;
+		END_IF
+		
+		IF iStep <> 100 THEN
+			iPrevStep:=100;
+		END_IF
+	
+	//Wait for detergent confirmation
+	150:
+		IF (i_iDetergent = 0) OR (i_iDetergent = 1 AND i_bDetergentConfirm) THEN
+			iStep:=200;
+		END_IF
+		
+		IF iStep <> 150 THEN
+			iPrevStep:=150;	
+		END_IF
+		
+	//Cleaning time
+	200:
+		IF q_Seq_TON[2].Q THEN
+			iStep:=250;
+		END_IF
+		
+		IF iStep <> 200 THEN
+			iPrevStep:=200;
+		END_IF
+	
+	//Wait for discharge flap to be opened	
+	250:
+		IF i_bDischargeOpened THEN
+			iStep:=300;
+		END_IF
+		
+	//Discharge time
+	300:
+		IF q_Seq_TON[3].Q OR GV.stSettings.bDischargeFlap_Manual THEN
+			iStep:=350;
+		END_IF	
+		
+		IF iStep <> 300 THEN
+			iPrevStep:=300;
+		END_IF
+		
+	//Confirmation that water is discharged
+	350:
+		IF (GV.stSettings.bDischargeFlap_Manual AND i_bDischargeConfirm) OR NOT GV.stSettings.bDischargeFlap_Manual THEN
+			iStep:=400;
+		END_IF
+	
+	400:
+		IF i_bDischargeClosed THEN
+			iStep:=1000;
+		END_IF
+	
+	1000:
+		q_bFinished:=TRUE;
+		IF i_bStepFinished THEN
+			iStep:=0;
+		END_IF
+END_CASE
+
+q_bDisOpenReq:=F_StepCMP(iStep,250,0,0,0,0,0,0,0,0,0);
+q_bDisCloseReq:=F_StepCMP(iStep,50,400,0,0,0,0,0,0,0,0);
+q_bDischargeReq:=F_StepCMP(iStep,350,0,0,0,0,0,0,0,0,0);
+
+IF F_StepCMP(iStep,50,400,0,0,0,0,0,0,0,0) THEN
+	q_stCmd.bDischargeOpen:=FALSE;
+	q_stCmd.bDischargeClose:=TRUE;
+ELSIF F_StepCMP(iStep,250,0,0,0,0,0,0,0,0,0) THEN
+	q_stCmd.bDischargeClose:=FALSE;
+	q_stCmd.bDischargeOpen:=FALSE;
+	q_stCmd.bDischargeHalfOpen:=TRUE;
+ELSIF NOT F_StepCMP(iStep,250,0,0,0,0,0,0,0,0,0) AND NOT F_StepCMP(iStep,50,0,0,0,0,0,0,0,0,0) THEN
+	q_stCmd.bDischargeClose:=FALSE;
+	q_stCmd.bDischargeOpen:=FALSE;
+	q_stCmd.bDischargeHalfOpen:=FALSE;
+END_IF
+
+IF F_StepCMP(iStep,100,200,0,0,0,0,0,0,0,0) AND NOT i_bPause THEN
+	q_stCmd.iMixer:=i_iMixer;
+	q_stCmd.rMixerSpeed:=i_rMixerSpeed;
+ELSIF F_StepCMP(iStep,300,0,0,0,0,0,0,0,0,0) AND NOT i_bPause THEN
+	q_stCmd.iMixer:=i_iMixer;
+	q_stCmd.rMixerSpeed:=GV.stSettings.rMixerDischargeSpeed;
+ELSE
+	q_stCmd.iMixer:=0;
+	q_stCmd.rMixerSpeed:=0;
+END_IF
+
+IF F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND 
+	TO_DINT(q_Seq_TON[1].ET)/60000 > GV.stSettings.iFillingChopperOnTime AND NOT i_bPause THEN
+	q_stCmd.iChopper:=i_iChopper;
+ELSIF F_StepCMP(iStep,200,0,0,0,0,0,0,0,0,0) AND NOT i_bPause THEN
+	q_stCmd.iChopper:=i_iChopper;
+ELSE
+	q_stCmd.iChopper:=0;
+END_IF
+
+q_stCmd.bAir:=F_StepCMP(iStep,0,0,0,0,0,0,0,0,0,0);
+q_stCmd.bWater:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND ((i_iMedium = 0)OR(i_iMedium = 1));
+q_stCmd.bColdWater:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND (i_iMedium = 0);
+q_stCmd.bWarmWater:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND (i_iMedium = 1);
+q_stCmd.bProcessWater:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND (i_iMedium = 2);
+
+q_stCmd.bTightAir:=F_StepCMP(iStep,50,100,150,200,300,0,0,0,0,0);
+q_stCmd.bChopper1_Air:=F_StepCMP(iStep,50,150,200,300,0,0,0,0,0,0);
+q_stCmd.bChopper2_Air:=F_StepCMP(iStep,50,150,200,300,0,0,0,0,0,0);
+
+
+q_stCmd.bChopper1_Water:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0);
+q_stCmd.bChopper2_Water:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0);
+
+//Wait for requests
+q_bDetergentReq:=F_StepCMP(iStep,150,0,0,0,0,0,0,0,0,0);
+
+//Statistic and Status
+tonStepTime(IN:=q_bRunning,PT:=T#5H);
+q_tStepTime:=tonStepTime.ET;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

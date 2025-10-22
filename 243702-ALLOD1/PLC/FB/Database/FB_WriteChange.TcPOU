@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_WriteChange" Id="{da2855e5-a25d-41e9-a8ae-46167150ce05}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteChange
+VAR_INPUT
+	i_bScan			:BOOL;
+	i_bWrite		:BOOL;
+	i_rVar			:REAL;
+	i_enEvent		:EN_BatchEvents;
+	i_sDescription	:STRING;
+END_VAR
+VAR
+	iVarOld			:REAL;
+	bVarOld			:BOOL;
+	Trig			:R_TRIG;
+	bScan			:BOOL;
+	Scan			:R_TRIG;
+	Scan_TON		:TON;
+END_VAR
+VAR_IN_OUT
+	iq_stParams		:ST_AuditTrail;
+	iq_bWrite		:BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF i_bScan THEN
+	bScan:=TRUE;
+END_IF
+Scan_TON(IN:=bScan,PT:=T#1S);
+IF Scan_TON.Q THEN
+	iVarOld:=i_rVar;
+	bScan:=FALSE;
+END_IF
+Trig(CLK:=i_bWrite);
+IF Trig.Q AND NOT bScan AND iVarOld <> i_rVar THEN
+	iq_stParams.Event:=TO_STRING(i_enEvent);
+	iq_stParams.Description := i_sDescription;
+	iq_stParams.Oldvalue:=REAL_TO_STRING(iVarOld);
+	iq_stParams.Newvalue:=REAL_TO_STRING(i_rVar);
+	iVarOld:=i_rVar;
+	iq_bWrite:=TRUE;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteChange">
+      <LineId Id="243" Count="3" />
+      <LineId Id="248" Count="6" />
+      <LineId Id="258" Count="6" />
+      <LineId Id="56" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

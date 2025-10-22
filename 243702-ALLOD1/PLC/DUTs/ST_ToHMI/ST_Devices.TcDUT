@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_Devices" Id="{072c46a4-91a6-4384-8ff8-7d19358d3cca}">
+    <Declaration><![CDATA[TYPE ST_Devices :
+STRUCT
+	iMixer					:INT; 		//0-OFF, 1-Forward Slow, 2-Forward Fast, 3-Backward Slow, 4-Backward Fast
+	iChopper1				:INT;		//0-OFF, 1-ON
+	iChopper2				:INT;		//0-OFF, 1-ON
+	iHeater					:INT;
+	bFlowMixerL_OK			:BOOL;
+	bFlowMixerR_OK			:BOOL;
+	bFlowChopper1_OK		:BOOL;
+	bFlowChopper2_OK		:BOOL;
+	bDoorClosed				:BOOL;
+	bDoorReadyToLock		:BOOL;
+	bDischargeFlap			:BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

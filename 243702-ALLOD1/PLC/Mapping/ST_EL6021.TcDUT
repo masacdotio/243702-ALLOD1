@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_EL6021" Id="{21853ba2-40f4-4e48-91d6-2f4ab77953db}">
+    <Declaration><![CDATA[TYPE ST_EL6021 :
+STRUCT
+	State							AT %I*	:UINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

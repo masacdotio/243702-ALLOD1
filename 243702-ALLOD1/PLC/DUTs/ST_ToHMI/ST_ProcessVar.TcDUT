@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_ProcessVar" Id="{c85d3d9e-4782-430a-a1a4-d24d26fd8b2e}">
+    <Declaration><![CDATA[TYPE ST_ProcessVar :
+STRUCT
+	rMixerSpeed					:REAL;
+	rMixerCurrent				:REAL;
+	rChopper1Current			:REAL;
+	rChopper2Current			:REAL;
+	rProductTemperature			:REAL;
+	rFlowChopper1				:REAL;
+	rFlowChopper2				:REAL;
+	rFlowMixerL					:REAL;
+	rFlowMixerR					:REAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

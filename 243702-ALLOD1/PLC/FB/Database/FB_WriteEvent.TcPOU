@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_WriteEvent" Id="{bbfa0f21-5109-45ce-a454-138c6568dfb4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteEvent
+VAR_INPUT
+	i_bWrite		:BOOL;
+	i_enEvent		:EN_BatchEvents;
+	i_sDescription	:STRING;
+END_VAR
+VAR
+	Trig			:R_TRIG;
+END_VAR
+VAR_IN_OUT
+	iq_stParams		:ST_OperatorAct;
+	iq_bWrite		:BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Trig(CLK:=i_bWrite);
+IF Trig.Q THEN
+	iq_stParams.Event:=TO_STRING(i_enEvent);
+	iq_stParams.Description := i_sDescription;
+	iq_bWrite:=TRUE;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteEvent">
+      <LineId Id="181" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="56" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

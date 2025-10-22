@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="_Chopper" Id="{6a2acdcb-3f7a-4ed5-a691-678e4a1ffdb1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM _Chopper
+VAR_INPUT
+	i_iOperation			:INT;
+END_VAR
+
+VAR
+END_VAR
+
+VAR_OUTPUT
+	q_bCmd					:BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF i_iOperation <> 0 THEN
+	IF i_iOperation = 1 THEN
+		q_bCmd:=TRUE;
+	END_IF
+ELSE
+	q_bCmd:=FALSE;
+END_IF
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_EL3214" Id="{bade59a8-8abd-40db-b142-3d41bd022b64}">
+    <Declaration><![CDATA[TYPE ST_EL3214 :
+STRUCT
+	Ch1_Error						AT %I*	:BOOL;
+	Ch1_Value						AT %I*	:INT;
+	Ch2_Error						AT %I*	:BOOL;
+	Ch2_Value						AT %I*	:INT;
+	Ch3_Error						AT %I*	:BOOL;
+	Ch3_Value						AT %I*	:INT;
+	Ch4_Error						AT %I*	:BOOL;
+	Ch4_Value						AT %I*	:INT;
+	State							AT %I*	:UINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

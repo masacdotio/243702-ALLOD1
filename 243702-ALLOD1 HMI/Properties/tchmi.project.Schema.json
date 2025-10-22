@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Faceplate_SingleValve": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Faceplate_SingleValve.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Faceplate_SingleValve"
+    },
+    "Faceplate_Motor": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Faceplate_Motor.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Faceplate_Motor"
+    },
+    "Faceplate_Coil": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Faceplate_Coil.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Faceplate_Coil"
+    },
+    "Faceplate_Chopper": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Faceplate_Chopper.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Faceplate_Chopper"
+    },
+    "Device_SingleValve": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Device_SingleValve.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Device_SingleValve"
+    },
+    "Device_Motor": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Device_Motor.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Device_Motor"
+    },
+    "Device_Coil": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Device_Coil.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Device_Coil"
+    },
+    "Device_Chopper": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Device_Chopper.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Device_Chopper"
+    },
+    "ButtonDropDown_System": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\ButtonDropDown_System.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/ButtonDropDown_System"
+    },
+    "ButtonDropDown_Recipe": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\ButtonDropDown_Recipe.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/ButtonDropDown_Recipe"
+    },
+    "AutoLogOut": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\AutoLogOut.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/AutoLogOut"
+    },
+    "Array(0..0) OF String": {
+      "items": {
+        "$ref": "tchmi:general#/definitions/String"
+      },
+      "type": "array"
+    }
+  }
+}

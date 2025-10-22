@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{61f55182-6b99-476d-8a01-429a9b38d40e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bFirstCycle				:BOOL:=TRUE;
+	tonFirstCycleDelay		:TON;
+	bFirstCycleDelay		:BOOL;
+	
+	//UPS
+	fbUPS					:FB_S_UPS_BAPI;
+	eGlobalSUpsState 		:E_S_UPS_State;
+	fbWritePersistent		:WritePersistentData;
+	
+	bPowerFailure			:BOOL;
+	
+	//IPC diagnostic
+	//fbReg					:FB_IPCDiag_Register;
+	//fbIPC_Temp				:FB_IPCDiag_ReadParameter;
+	//fbIPC_BootCnt			:FB_IPCDiag_ReadParameter;
+	//fbIPC_OperTime			:FB_IPCDiag_ReadParameter;	
+	
+	//Close application	
+	fbCloseHMI				:NT_StartProcess;
+	fbCloseRDP				:NT_StartProcess;
+	
+	
+	//Auto logout
+	tonUserTimeOut			:TON;
+	tonUserLogOut			:TON;
+
+	sLogoutShift1			:STRING;
+	sLogoutShift2			:STRING;
+	sLogoutShift3			:STRING;
+	
+	bLogout					:BOOL;
+	tonLogout				:TON;
+	
+	
+	opcTrigMixStart			:R_TRIG;
+	opcTrigMixStop			:F_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[P00_Mapping();
+P01_AnalogScaling();
+P02_GlobalSystemTime();
+
+
+P1_00_MAIN();
+P2_00_MAIN();
+P3_00_MAIN();
+P4_00_MAIN();
+P5_00_MAIN();
+
+bFirstCycle:=FALSE;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

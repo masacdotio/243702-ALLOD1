@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_Cleaning_Phases" Id="{53c946ce-9ee5-4d85-8a0c-ef5eccca9f49}">
+    <Declaration><![CDATA[TYPE ST_Cleaning_Phases :
+STRUCT
+	bEnable								:BOOL;
+	iType								:INT;  //0-Prewash,1- Filter-Dismout-Nozzle-Mount, 2-Main Clean, 3 - PW Clean, 4 - Rinising pipes, 5 Blowing out, 6 - Control
+	sDescription						:STRING;
+	rMixingShaft_Speed					:REAL;
+	iMixer								:INT;  //0-OFF,1-ON/Forward,2-Interval,3-Backward,4-Alternate
+	iChopper							:INT;  //0-OFF,1-ON
+	iMedium								:INT;  //0-Cold water,1-Warm water,2-Purified water
+	iDetergent							:INT;  //0-OFF,1-ON
+	iTime1								:ST_HMI_Time;			
+	iTime2								:ST_HMI_Time;
+	iTime3								:ST_HMI_Time;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

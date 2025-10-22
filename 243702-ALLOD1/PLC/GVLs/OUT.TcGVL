@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="OUT" Id="{8df722c9-4722-4cf0-b8f4-b9f62553edd0}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	bDoor_Unlock					:BOOL;
+	bVoltageON_Light				:BOOL;
+	bMixerForward					:BOOL;
+	bMixerBackward				 	:BOOL;
+	bHeater						 	:BOOL;
+	bChopper1					 	:BOOL;
+	bChopper2					 	:BOOL;
+	bDischarge_Open					:BOOL;
+	bDischarge_Close		 		:BOOL;
+	bDischarge_Fix					:BOOL;
+	
+	bDryingPipeSocket_V1010			:BOOL;
+	bCleaningAir_V1030			 	:BOOL;
+	bCleaningWater_V1020		 	:BOOL;
+	bColdWater					 	:BOOL;
+	bWarmWater					 	:BOOL;
+	bTightAir_V1100					:BOOL;
+	bProcessWater_V1025			 	:BOOL;
+	
+	bChopper1_Air_V1080		 		:BOOL;
+	bChopper1_Water_V1570		 	:BOOL;
+	bChopper1_Drain_V1150		 	:BOOL;
+	
+	bChopper2_Air_V1090		 		:BOOL;
+	bChopper2_Water_V1580		 	:BOOL;
+	bChopper2_Drain_V1160		 	:BOOL;
+	
+	bAlarm							:BOOL;
+	bDoorOpen_Light				 	:BOOL;
+	
+	
+	iMixerSpeed					 	:INT;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

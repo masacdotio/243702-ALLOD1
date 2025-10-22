@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="_Discharging" Id="{5270e064-bb53-464a-890b-988d97239af2}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM _Discharging
+VAR_INPUT
+	i_bStart							:BOOL;
+	i_bProcessFinished					:BOOL;
+	i_bStepFinished						:BOOL;
+	i_bSkipStep							:BOOL;
+	i_bBarrelInPos						:BOOL;
+	i_bManualFlapOpen					:BOOL;
+	i_bManualFlapClose					:BOOL;
+	i_iMixer							:INT;
+	i_rMixerSpeed						:REAL;
+	i_bMixerStart						:BOOL; 	
+	i_iChopper							:INT;	
+END_VAR
+VAR
+	iStep						:INT;
+	iPrevStep					:INT;
+	Seq_TON						:ARRAY[0..9] OF TON;
+	Seq_Time					:ARRAY[0..9] OF TIME;
+	trigMixer					:R_TRIG;
+	bStartMixer					:BOOL;
+	tonStepTime					:TON;
+END_VAR
+VAR_OUTPUT
+	q_bRunning						:BOOL;
+	q_bFinished						:BOOL;
+	q_stCmd							:ST_ProcessCmd;
+	q_bDisOpenReq					:BOOL;
+	q_bDischargeCmdEnable			:BOOL;
+	q_bBarrelInPosReq				:BOOL;
+	q_tStepTime						:TIME;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[trigMixer(CLK:=i_bMixerStart);
+
+
+q_bRunning:=iStep<>0;
+
+IF i_bSkipStep THEN
+	iStep:=1000;
+END_IF
+
+IF NOT i_bStart THEN
+	iStep:=0;
+END_IF
+
+CASE iStep OF
+	0:
+		IF i_bStart THEN
+			q_bFinished:=FALSE;
+			iStep:=40;
+		END_IF
+		
+		IF iStep <> 0 THEN
+			iPrevStep:=0;
+		END_IF
+		
+	40:
+		IF i_bBarrelInPos THEN
+			iStep:=50;
+		END_IF
+		
+	50:
+		IF i_bManualFlapOpen THEN
+			iStep:=100;
+		END_IF
+		
+		IF iStep <> 50 THEN
+			iPrevStep:=50;
+		END_IF
+	
+	100:
+		
+		IF i_bProcessFinished THEN
+			iStep:=1000;
+		END_IF
+		IF iStep <> 100 THEN
+			iPrevStep:=100;
+		END_IF
+
+		
+	1000:
+		q_bFinished:=TRUE;
+		IF i_bStepFinished THEN
+			iStep:=0;
+		END_IF
+END_CASE
+
+IF trigMixer.Q THEN
+	bStartMixer:= NOT bStartMixer;
+END_IF
+
+q_bBarrelInPosReq:=F_StepCMP(iStep,40,0,0,0,0,0,0,0,0,0);
+
+q_bDisOpenReq:=F_StepCMP(iStep,50,0,0,0,0,0,0,0,0,0);
+IF F_StepCMP(iStep,50,0,0,0,0,0,0,0,0,0) THEN
+	q_stCmd.bDischargeClose:=FALSE;
+	q_stCmd.bDischargeOpen:=TRUE;
+ELSE
+	q_stCmd.bDischargeClose:=FALSE;
+	q_stCmd.bDischargeOpen:=FALSE;
+END_IF
+
+q_bDischargeCmdEnable:=F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0);
+
+IF F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND bStartMixer THEN
+	q_stCmd.iMixer:=i_iMixer;
+	q_stCmd.rMixerSpeed:=i_rMixerSpeed;
+ELSE
+	q_stCmd.iMixer:=0;
+	q_stCmd.rMixerSpeed:=0;
+	bStartMixer:=FALSE;
+END_IF
+
+IF F_StepCMP(iStep,100,0,0,0,0,0,0,0,0,0) AND bStartMixer THEN
+	q_stCmd.iChopper:=i_iChopper;
+ELSE
+	q_stCmd.iChopper:=0;
+END_IF
+
+q_stCmd.bTightAir:=F_StepCMP(iStep,50,100,0,0,0,0,0,0,0,0);
+q_stCmd.bChopper1_Air:=F_StepCMP(iStep,50,100,0,0,0,0,0,0,0,0);
+q_stCmd.bChopper2_Air:=F_StepCMP(iStep,50,100,0,0,0,0,0,0,0,0);
+
+//Statistic and Status
+tonStepTime(IN:=q_bRunning,PT:=T#5H);
+q_tStepTime:=tonStepTime.ET;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

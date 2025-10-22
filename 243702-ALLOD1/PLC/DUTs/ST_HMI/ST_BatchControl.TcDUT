@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_BatchControl" Id="{d429302e-56cf-4d99-a7b4-0af8f08b8d03}">
+    <Declaration><![CDATA[TYPE ST_BatchControl :
+STRUCT
+	bCreate			:BOOL;
+	bCancel			:BOOL;
+	bOpen			:BOOL;
+	bClose			:BOOL;
+	bLoad			:BOOL;
+	
+	sName			:STRING;
+	iNumber			:UDINT;
+	sProduct		:STRING;
+	sComment		:STRING;
+	sRecipe			:STRING;
+	
+	iRecipeType		:INT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

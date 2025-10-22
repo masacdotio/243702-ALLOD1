@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.16">
+	<Translations>
+		<Text TxtId="Failure control voltage DC">
+			<Text LcId="47"><![CDATA[Грешка во низок контролен напон]]></Text>
+		</Text>
+		<Text TxtId="Failure cabinet fan">
+			<Text LcId="47"><![CDATA[Грешка во вентилаторот за ладење на кабинетот]]></Text>
+		</Text>
+		<Text TxtId="Emergency Stop">
+			<Text LcId="47"><![CDATA[Притиснат итен стоп]]></Text>
+		</Text>
+		<Text TxtId="Failure air pressure">
+			<Text LcId="47"><![CDATA[Грешка со компримираниот воздух]]></Text>
+		</Text>
+		<Text TxtId="Power failure">
+			<Text LcId="47"><![CDATA[Исклучено напојување на контролерот]]></Text>
+		</Text>
+		<Text TxtId="Mixer out of setpoint">
+			<Text LcId="47"><![CDATA[Непостигната брзина на миксер]]></Text>
+		</Text>
+		<Text TxtId="Creating batch report failed">
+			<Text LcId="47"><![CDATA[Неуспешно креирање на репортот за изработената серија]]></Text>
+		</Text>
+		<Text TxtId="Sending batch report failed">
+			<Text LcId="47"><![CDATA[Неуспешно праќање на репортот за изработената серија]]></Text>
+		</Text>
+	</Translations>
+	<DataTypes>
+		<DataType>
+			<Name GUID="{C6F5224F-DB62-4315-BE00-85C3D8A0D1D0}" PersistentType="true">Alarms</Name>
+			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
+			<EventId>
+				<Name Id="1">AlarmsEvent1</Name>
+				<DisplayName TxtId=""><![CDATA[Failure control voltage DC]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="2">AlarmsEvent2</Name>
+				<DisplayName TxtId=""><![CDATA[IO card failure]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="3">AlarmsEvent3</Name>
+				<DisplayName TxtId=""><![CDATA[Failure cabinet fan]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="4">AlarmsEvent4</Name>
+				<DisplayName TxtId=""><![CDATA[Emergency Stop]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5">AlarmsEvent5</Name>
+				<DisplayName TxtId=""><![CDATA[Failure air pressure]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="6">AlarmsEvent6</Name>
+				<DisplayName TxtId=""><![CDATA[Power failure]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="7">AlarmsEvent7</Name>
+				<DisplayName TxtId=""><![CDATA[Low flow main shaft sealing drive side]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="8">AlarmsEvent8</Name>
+				<DisplayName TxtId=""><![CDATA[Low flow main shaft sealing non drive side]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9">AlarmsEvent9</Name>
+				<DisplayName TxtId=""><![CDATA[Low failure flow sealing chopper 1]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="10">AlarmsEvent10</Name>
+				<DisplayName TxtId=""><![CDATA[Low failure flow sealing chopper 2]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="11">AlarmsEvent11</Name>
+				<DisplayName TxtId=""><![CDATA[Main door is not physically closed]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="12">AlarmsEvent12</Name>
+				<DisplayName TxtId=""><![CDATA[Failure frequency converter mixer]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="13">AlarmsEvent13</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent13_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="14">AlarmsEvent14</Name>
+				<DisplayName TxtId=""><![CDATA[Mixer out of setpoint]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="15">AlarmsEvent15</Name>
+				<DisplayName TxtId=""><![CDATA[Failure motor protection chopper 1]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="16">AlarmsEvent16</Name>
+				<DisplayName TxtId=""><![CDATA[Failure motor protection chopper 2]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="17">AlarmsEvent17</Name>
+				<DisplayName TxtId=""><![CDATA[Discharge flap failed to close]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="18">AlarmsEvent18</Name>
+				<DisplayName TxtId=""><![CDATA[Discharge flap failed to open]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="19">AlarmsEvent19</Name>
+				<DisplayName TxtId=""><![CDATA[High flow main shaft sealing drive side]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="20">AlarmsEvent20</Name>
+				<DisplayName TxtId=""><![CDATA[High flow main shaft sealing non drive side]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="21">AlarmsEvent21</Name>
+				<DisplayName TxtId=""><![CDATA[High failure flow sealing chopper 1]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="22">AlarmsEvent22</Name>
+				<DisplayName TxtId=""><![CDATA[High failure flow sealing chopper 2]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="23">AlarmsEvent23</Name>
+				<DisplayName TxtId=""><![CDATA[Discharge flap failed to stop on half position]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="24">AlarmsEvent24</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent24_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="25">AlarmsEvent25</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent25_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="26">AlarmsEvent26</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent26_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="27">AlarmsEvent27</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent27_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="28">AlarmsEvent28</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent28_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="29">AlarmsEvent29</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent29_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="30">AlarmsEvent30</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent30_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="31">AlarmsEvent31</Name>
+				<DisplayName TxtId=""><![CDATA[Creating batch report failed]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="32">AlarmsEvent32</Name>
+				<DisplayName TxtId=""><![CDATA[Sending batch report failed]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="33">AlarmsEvent33</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent33_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="34">AlarmsEvent34</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent34_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="35">AlarmsEvent35</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent35_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="36">AlarmsEvent36</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent36_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="37">AlarmsEvent37</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent37_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="38">AlarmsEvent38</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent38_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="39">AlarmsEvent39</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent39_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="40">AlarmsEvent40</Name>
+				<DisplayName TxtId=""><![CDATA[AlarmsEvent40_DisplayText]]></DisplayName>
+				<Severity>Critical</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{6AA8A752-B1DF-4E72-BF8E-491BFAE61A26}"/>
+				<Hide GUID="{7AA4B1A8-E27C-48F7-90C7-4FA06C0C7684}"/>
+				<Hide GUID="{0DAE0C50-510A-432A-B8F3-D9B76A785A5C}"/>
+				<Hide GUID="{600D9437-B112-4E26-B261-47B9C0AEE55C}"/>
+				<Hide GUID="{8BF3FFC5-B60A-4BBD-866B-B58CB86A4886}"/>
+				<Hide GUID="{FD4053F6-D9C9-460C-90AD-AD62BAE815C0}"/>
+				<Hide GUID="{2663DB1E-4B42-4FA3-9C19-138FA9703765}"/>
+				<Hide GUID="{4EFF7EC2-00BF-4372-9CCC-49995B9CC000}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{8C30EA48-DECC-4ADE-901C-90096A1D6B15}" Target64Bit="true" ShowHideConfigurations="#x6">
+		<System>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project File="PLC.xti"/>
+		</Plc>
+		<Io>
+			<Device File="PLC-ECAT.xti" Id="4"/>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500830000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500841000403}" Id="#x02030020"/>
+	</Mappings>
+</TcSmProject>

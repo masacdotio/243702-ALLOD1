@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="P2_02_Cleaning_Seq" Id="{36abc129-8039-4b37-8333-c76cdc7a98ed}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P2_02_Cleaning_Seq
+VAR
+	tDuration_TON				:ARRAY[0..10] OF TON;
+	tDuration					:ARRAY[0..10] OF TIME;
+	bRunning					:BOOL;
+	
+	trigStart					:R_TRIG;
+	trigSkip					:R_TRIG;
+	trigPrev					:R_TRIG;
+	trigJump					:R_TRIG;
+	
+	iCountTotalProcess			:INT;
+	iNoProceses					:INT;
+	tTotalTime					:TON;
+	trigResetTotal				:R_TRIG;
+	
+	bProcessRunning				:BOOL;
+	bProcessFinish				:BOOL;
+	
+	iMaxNumberOfProcess			:INT;
+	bPreviousStep				:BOOL;
+END_VAR
+
+VAR PERSISTENT
+	bStartProcess				:BOOL;
+	bStopProcess				:BOOL;
+	
+	iProcess					:INT;
+	iStepPrev					:INT;
+	iProcessPrev				:INT;
+	iStep						:INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iMaxNumberOfProcess:=20;
+
+GV.iCP:=iProcess;
+IF iProcess > 1 THEN
+	GV.iPrevCP:=iProcess-1;
+END_IF
+
+
+// Terminate process
+IF GV.stControl.Stop THEN
+	iStep := 1000;
+END_IF
+
+//Jump requests
+trigStart(CLK:=GV.stControl.Running AND GV.iRecipeType=1);
+trigSkip(CLK:=GV.stControl.Next);
+trigPrev(CLK:=GV.stControl.Previous);
+trigJump(CLK:=GV.stControl.Jump);
+
+IF trigPrev.Q THEN
+	bPreviousStep:=TRUE;
+END_IF
+
+//0 - Feeding
+//1 - Mixing
+//2 - Discharging
+
+//Protect iProcess of forcing online value
+IF iProcess < 0 THEN
+	iProcess := 0;
+ELSIF iProcess > iMaxNumberOfProcess THEN
+	iProcess := iMaxNumberOfProcess;
+END_IF
+
+IF Recipes.Cleaning_Active.stPhase[iProcess].iType = 0 THEN
+	bProcessRunning:=_PreWash.q_bRunning;
+	bProcessFinish:=_PreWash.q_bFinished;
+ELSIF Recipes.Cleaning_Active.stPhase[iProcess].iType = 1 THEN
+	bProcessRunning:=_Mounting.q_bRunning;
+	bProcessFinish:=_Mounting.q_bFinished;
+ELSIF Recipes.Cleaning_Active.stPhase[iProcess].iType = 2 THEN
+	bProcessRunning:=_MainClean.q_bRunning;
+	bProcessFinish:=_MainClean.q_bFinished;
+ELSIF Recipes.Cleaning_Active.stPhase[iProcess].iType = 3 THEN
+	bProcessRunning:=FALSE;
+	bProcessFinish:=FALSE;
+ELSIF Recipes.Cleaning_Active.stPhase[iProcess].iType = 4 THEN
+	bProcessRunning:=_Draining.q_bRunning;
+	bProcessFinish:=_Draining.q_bFinished;
+ELSIF Recipes.Cleaning_Active.stPhase[iProcess].iType = 5 THEN
+	bProcessRunning:=_Blowing.q_bRunning;
+	bProcessFinish:=_Blowing.q_bFinished;
+ELSIF Recipes.Cleaning_Active.stPhase[iProcess].iType = 6 THEN
+	bProcessRunning:=_Control.q_bRunning;
+	bProcessFinish:=_Control.q_bFinished;
+END_IF
+
+
+CASE iStep OF 
+	0:	
+		iProcess := 0;
+		iProcessPrev := 0;
+		IF trigStart.Q THEN
+			iProcess:=1;
+			iStep := 200;
+		END_IF
+		
+		IF iStep <> 0 THEN
+			iStepPrev := 0;
+		END_IF
+
+		
+	//Wait for process start
+	200:
+		bPreviousStep:=FALSE;
+		bStartProcess:=TRUE;
+		IF bProcessRunning THEN
+			iStep:=300;
+		END_IF
+		
+		IF iStep <> 200 THEN
+			iStepPrev := 200;
+		END_IF
+	//Process running	
+	300:
+		IF bProcessFinish THEN
+			iStep:=400;
+		END_IF
+		
+		IF iStep <> 300 THEN
+			iStepPrev := 300;
+		END_IF
+	//Process finish
+	400:
+		bStartProcess:=FALSE;
+		bStopProcess:=TRUE;
+		IF NOT bProcessRunning THEN
+			bStopProcess:=FALSE;
+			IF iProcess > 0 AND iProcess < iMaxNumberOfProcess AND NOT bPreviousStep THEN
+				IF Recipes.Cleaning_Active.stPhase[iProcess+1].bEnable THEN
+					iProcessPrev:=iProcess;
+					iProcess:=iProcess+1;
+					iStep:=200;
+				ELSE
+					iStep:=1000;
+				END_IF
+			ELSIF bPreviousStep THEN
+				iProcessPrev:=iProcess;
+				IProcess:=iProcess-1;
+				iStep:=200;
+			END_IF
+		END_IF
+		IF iStep <> 400 THEN
+			iStepPrev := 400;
+		END_IF
+	500:
+		bStartProcess:=FALSE;
+		IF GV.stControl.Running THEN
+			iStep := 200;
+		END_IF
+	1000:
+		bStartProcess:=FALSE;
+		GV.stControl.Finish := TRUE;
+		iStep := 0;
+END_CASE
+
+
+
+
+
+
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

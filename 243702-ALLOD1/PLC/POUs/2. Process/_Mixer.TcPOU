@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="_Mixer" Id="{add26596-87b6-4a5e-a698-9090fb734732}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM _Mixer
+VAR_INPUT
+	i_iOperation			:INT;
+	i_rSetSpeed				:REAL;
+	i_rActualSpeed			:REAL;
+	i_bRun					:BOOL;
+	i_tIntervalFwd			:TIME;
+	i_tIntervalPause		:TIME;
+	i_tAlternateON			:TIME;
+	i_tAlternatePause		:TIME;
+END_VAR
+
+VAR
+	tonIntervalFwd			:TON;
+	tonIntervalPause		:TON;
+	tonAlternateON			:TON;
+	tonAlternatePause		:TON;
+	iStepI					:INT;
+	iStepA					:INT;
+	
+
+	fbModbus				:ModbusRtuMaster_KL6x22B;
+	bRead					:BOOL;
+	wReadValue				:ARRAY[0..1] OF WORD;
+	rMixer_AV_Fwd			:REAL;
+	rMixer_AV_Bcw			:REAL;
+	tonRead					:TON;
+END_VAR
+
+VAR_OUTPUT
+	q_rSpeed_Cmd					:REAL;
+	q_bFwd_Cmd						:BOOL;
+	q_bBcw_Cmd						:BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF i_iOperation = 0 THEN
+	q_bBcw_Cmd:=FALSE;
+	q_bFwd_Cmd:=FALSE;
+ELSIF i_iOperation = 1 THEN
+	q_bBcw_Cmd:=FALSE;
+	q_bFwd_Cmd:=TRUE;
+ELSIF i_iOperation = 2 THEN
+	tonIntervalFwd(IN:=(iStepI=10),PT:=i_tIntervalFwd);
+	tonIntervalPause(IN:=(iStepI=0) AND NOT i_bRun,PT:=i_tIntervalPause);
+	CASE iStepI OF
+		0:
+			q_bBcw_Cmd:=FALSE;
+			q_bFwd_Cmd:=FALSE;
+			IF tonIntervalPause.Q THEN
+				iStepI:=10;
+			END_IF
+		10:
+			q_bBcw_Cmd:=FALSE;
+			q_bFwd_Cmd:=TRUE;
+			IF tonIntervalFwd.Q THEN
+				iStepI:=0;	
+			END_IF
+	END_CASE
+	
+ELSIF i_iOperation = 3 THEN
+	q_bFwd_Cmd:=FALSE;
+	q_bBcw_Cmd:=TRUE;	
+ELSIF i_iOperation = 4 THEN
+	tonAlternateON(IN:=(iStepA=10)OR(iStepA=30),PT:=i_tAlternateON);
+	tonAlternatePause(IN:=((iStepA=0)OR(iStepA=20) AND NOT i_bRun),PT:=i_tAlternatePause);
+	
+	CASE iStepA OF 
+		0:
+		   q_bBcw_Cmd:=FALSE;
+		   q_bFwd_Cmd:=FALSE;
+		   IF tonAlternatePause.Q THEN
+			   iStepA:=10;
+		   END_IF
+		   
+		10:
+			q_bBcw_Cmd:=FALSE;
+		    q_bFwd_Cmd:=TRUE;
+			IF tonAlternateON.Q THEN
+				iStepA:=20;
+			END_IF
+			
+		20:
+			q_bBcw_Cmd:=FALSE;
+		    q_bFwd_Cmd:=FALSE;
+		    IF tonAlternatePause.Q THEN
+			    iStepA:=30;
+		    END_IF
+			
+		30:
+			q_bFwd_Cmd:=FALSE;
+		    q_bBcw_Cmd:=TRUE;
+			IF tonAlternateON.Q THEN
+				iStepA:=0;
+			END_IF
+	END_CASE
+END_IF
+
+IF i_iOperation <> 2 THEN
+	iStepI:=0;
+END_IF
+
+IF i_iOperation <> 4 THEN
+	iStepA:=0;
+END_IF
+
+q_rSpeed_Cmd:=i_rSetSpeed;
+
+MODBUS();
+
+
+
+]]></ST>
+    </Implementation>
+    <Action Name="MODBUS" Id="{079cd2fe-7813-42eb-a23d-7b0ea6f28cf9}">
+      <Implementation>
+        <ST><![CDATA[fbModbus.ReadRegs(
+				UnitID:=1,
+				Quantity:= 2, 
+				MBAddr:= 16169,
+				cbLength:=SIZEOF(wReadValue),
+				pMemoryAddr:=ADR(wReadValue),
+				Execute:=bRead,
+				TimeOut:=T#100MS);
+
+bRead:=FALSE;
+IF NOT fbModBus.BUSY THEN
+	fbModbus.ReadRegs(Execute:=FALSE);
+END_IF
+
+tonRead(IN:=NOT(fbModBus.BUSY),PT:=T#500MS);
+IF tonRead.Q THEN
+	bRead:=TRUE;
+END_IF
+
+rMixer_AV_Fwd:=wReadValue[0] + wReadValue[1];
+
+rMixer_AV_Bcw:=wReadValue[0] - wReadValue[1];
+]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_Status" Id="{f71150e8-fb91-45d5-91b6-ea34e89c749f}">
+    <Declaration><![CDATA[TYPE ST_Status :
+STRUCT
+	sBatchTime							:STRING; 	//Time elapsed since batch is open 00:00:00
+	iCurrentPhaseNo						:INT;	  	//Current phase number 1/2/3....20
+	iTotalPhaseNo						:INT;	  	//Total phase number 1/2/3...20
+	iCurrentPhaseType					:INT;	  	//Current Phaes Type Production: 0-Feeding,1-Mixing,2-Discharge - Same for Cleaning
+	sStepTime							:STRING;  	//Time elapsed in current MAIN step 00:00:00
+	rStepTime1							:REAL;    	//Time elapsed in current SUB step - filling bar value
+	rStepTime2							:REAL;		//Time elapsed in current SUB step - filling bar value
+	rStepTime3							:REAL;		//Time elapsed in current SUB step - filling bar value
+	rStepTime4							:REAL;		//Time elapsed in current SUB step - filling bar value
+	rStepTime5							:REAL;		//Time elapsed in current SUB step - filling bar value
+	rStepTime6							:REAL;		//Time elapsed in current SUB step - filling bar value
+	rStepTime7							:REAL;		//Time elapsed in current SUB step - filling bar value
+	sStepTime1							:STRING;    	//Time elapsed 00:00:00 format
+	sStepTime2							:STRING;		//Time elapsed 00:00:00 format
+	sStepTime3							:STRING;		//Time elapsed 00:00:00 format
+	sStepTime4							:STRING;		//Time elapsed 00:00:00 format
+	sStepTime5							:STRING;		//Time elapsed 00:00:00 format
+	sStepTime6							:STRING;		//Time elapsed 00:00:00 format
+	sStepTime7							:STRING;		//Time elapsed 00:00:00 format
+	rStepTime1Prod						:REAL;
+	sStepTime1Prod						:STRING;
+	bBatchConfirmed1					:BOOL;		//Response from Confirmation 1 - On batch startup
+	bBatchConfirmed2					:BOOL;		//Response from Confirmation 1 - On batch startup
+	bBatchConfirmed3					:BOOL;		//Response from Confirmation 1 - On batch startup - NO IN PRODUCTION
+	bBatchConfirmed4					:BOOL;		//Response from Confirmation 1 - On batch startup - NO IN PRODUCTION
+	iFlapState							:INT; 		//0-Closed, 1-Opened, 2- Traveling, 3-Fault
+	bDoorLocked							:BOOL;
+	bDetergentReq						:BOOL;
+	bDischargeOpenReq					:BOOL;
+	bDischargeCloseReq					:BOOL;
+	bBarrelInPos						:BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

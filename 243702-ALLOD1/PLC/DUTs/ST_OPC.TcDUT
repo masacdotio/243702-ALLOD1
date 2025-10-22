@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_OPC" Id="{860b9319-e221-45cc-838d-e7f272949e94}">
+    <Declaration><![CDATA[TYPE ST_OPC :
+STRUCT
+	BatchType				:STRING;
+	BatchTime				:DINT;
+	BatchID					:STRING;
+	PhaseName				:STRING;
+	RecipeName				:STRING;
+	PhaseTime				:DINT;
+	MixerActualSpeed		:REAL;
+	MixerMaxSpeed			:REAL;
+	ChopperCommand			:BOOL;
+	Temperature				:REAL;
+	MachineStatus			:STRING;
+	sMixingStartTime		:STRING;
+	sMixingStopTime			:STRING;
+	sMixingSetpoint			:DINT;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

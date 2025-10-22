@@ -1,0 +1,62 @@
+<div id="PRODUCT_TEMP_4" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-height="870" data-tchmi-height-unit="px" data-tchmi-height-mode="Value">
+<div id="TcHmiTrendLineChart_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="870" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-start="First" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-x-axis-name="%l%Time%/l%" data-tchmi-x-sub-tick-steps="3" data-tchmi-y-sub-tick-steps="4" data-tchmi-show-legend="false" data-tchmi-legend-font-size="12" data-tchmi-show-menu-bar="true" data-tchmi-menu-bar-position="Top" data-tchmi-reference-lines-position="Background" data-tchmi-x-main-tick-steps="5" data-tchmi-show-x-axis-name="false" data-tchmi-x-axis-name-font-size="20" data-tchmi-x-label-font-size="20" data-tchmi-menu-bar-label-font-size="18" data-tchmi-menu-bar-label-font-style="Auto" data-tchmi-menu-bar-label-font-weight="Auto" data-tchmi-interval="10000">
+<script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
+[
+  {
+    "id": 1,
+    "showAxis": true,
+    "position": "Left",
+    "mainTickMinValue": 0.0,
+    "mainTickMaxValue": 150.0,
+    "showLabels": true,
+    "showAxisName": true,
+    "axisName": "%l%Chopper2Current%/l%",
+    "axisNameFontFamily": "",
+    "axisNameFontSize": 30,
+    "axisNameFontSizeUnit": "px",
+    "axisNameFontWeight": "Bold",
+    "decimalPlaces": 2,
+    "unit": "A",
+    "autoScaling": false,
+    "logarithmicScale": false,
+    "axisLabeling": "Number",
+    "labelFontColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "axisColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "axisNameFontColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    }
+  }
+]
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-line-graph-descriptions" type="application/json">
+[
+  {
+    "yAxisId": 1,
+    "legendName": "%l%ProductTemperature%/l%",
+    "scaleFactor": 1.0,
+    "showAxis": true,
+    "lineWidth": 1,
+    "pointDot": false,
+    "pointDotRadius": 3,
+    "pointDotStrokeWidth": 1,
+    "lineColor": {
+      "color": "rgba(246, 111, 58, 1)"
+    },
+    "pointDotFillColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiLineChart::LineGraphDescriptionPointDotFillColor%/tr%",
+    "pointDotStrokeColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiLineChart::LineGraphDescriptionPointDotStrokeColor%/tr%",
+    "pointDotInStopMode": true,
+    "fillMode": "None",
+    "fillColor": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiLineChart::LineGraphDescriptionFillColor%/tr%",
+    "fillTransparency": 50.0,
+    "symbol": "PLC1.GV.stToHMI.stProcessVar.rChopper2Current"
+  }
+]
+</script>
+</div>
+</div>

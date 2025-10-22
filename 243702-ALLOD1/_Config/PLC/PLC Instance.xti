@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.16" ClassName="CTComPlcObjDef">
+	<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" XtvPath="PLC\PLC Instance.xtv" TmcPath="PLC\PLC.tmc">
+		<Name>__FILENAME__</Name>
+		<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+		<Contexts>
+			<Context>
+				<Id>0</Id>
+				<Name>PlcTask</Name>
+				<ManualConfig>
+					<OTCID>#x02010030</OTCID>
+				</ManualConfig>
+				<Priority>20</Priority>
+				<CycleTime>10000000</CycleTime>
+			</Context>
+		</Contexts>
+		<TaskPouOids>
+			<TaskPouOid Prio="20" OTCID="#x08502001"/>
+		</TaskPouOids>
+	</Instance>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Analog Input #1 (EL3174)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch1_Error" VarB="AI Standard Channel 1^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch1_Value" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch2_Error" VarB="AI Standard Channel 2^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch2_Value" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch3_Error" VarB="AI Standard Channel 3^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch3_Value" VarB="AI Standard Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch4_Error" VarB="AI Standard Channel 4^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.Ch4_Value" VarB="AI Standard Channel 4^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI1.State" VarB="InfoData^State"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Analog Input #2 (EL3174)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch1_Error" VarB="AI Standard Channel 1^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch1_Value" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch2_Error" VarB="AI Standard Channel 2^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch2_Value" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch3_Error" VarB="AI Standard Channel 3^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch3_Value" VarB="AI Standard Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch4_Error" VarB="AI Standard Channel 4^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.Ch4_Value" VarB="AI Standard Channel 4^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.AI2.State" VarB="InfoData^State"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Analog Output #1 (EL4008)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.AO1.State" VarB="InfoData^State"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.AO1.Ch1_Value" VarB="AO Outputs Channel 1^Analog output"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.AO1.Ch2_Value" VarB="AO Outputs Channel 2^Analog output"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.AO1.Ch3_Value" VarB="AO Outputs Channel 3^Analog output"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.AO1.Ch4_Value" VarB="AO Outputs Channel 4^Analog output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Digital Input #1 (EL1819)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch10_Value" VarB="Channel 10^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch11_Value" VarB="Channel 11^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch12_Value" VarB="Channel 12^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch13_Value" VarB="Channel 13^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch14_Value" VarB="Channel 14^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch15_Value" VarB="Channel 15^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch16_Value" VarB="Channel 16^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch1_Value" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch2_Value" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch3_Value" VarB="Channel 3^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch4_Value" VarB="Channel 4^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch5_Value" VarB="Channel 5^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch6_Value" VarB="Channel 6^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch7_Value" VarB="Channel 7^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch8_Value" VarB="Channel 8^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.Ch9_Value" VarB="Channel 9^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.DI1.State" VarB="InfoData^State"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Digital Output #1 (EL2809)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.DO1.State" VarB="InfoData^State"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch10_Value" VarB="Channel 10^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch11_Value" VarB="Channel 11^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch12_Value" VarB="Channel 12^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch13_Value" VarB="Channel 13^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch14_Value" VarB="Channel 14^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch15_Value" VarB="Channel 15^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch16_Value" VarB="Channel 16^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch1_Value" VarB="Channel 1^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch2_Value" VarB="Channel 2^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch3_Value" VarB="Channel 3^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch4_Value" VarB="Channel 4^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch5_Value" VarB="Channel 5^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch6_Value" VarB="Channel 6^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch7_Value" VarB="Channel 7^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch8_Value" VarB="Channel 8^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO1.Ch9_Value" VarB="Channel 9^Output" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Digital Output #2 (EL2809)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.DO2.State" VarB="InfoData^State"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch10_Value" VarB="Channel 10^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch11_Value" VarB="Channel 11^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch12_Value" VarB="Channel 12^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch13_Value" VarB="Channel 13^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch14_Value" VarB="Channel 14^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch15_Value" VarB="Channel 15^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch16_Value" VarB="Channel 16^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch1_Value" VarB="Channel 1^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch2_Value" VarB="Channel 2^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch3_Value" VarB="Channel 3^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch4_Value" VarB="Channel 4^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch5_Value" VarB="Channel 5^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch6_Value" VarB="Channel 6^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch7_Value" VarB="Channel 7^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch8_Value" VarB="Channel 8^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^P00_Mapping.DO2.Ch9_Value" VarB="Channel 9^Output" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Modbus (EL6021)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.PB1.State" VarB="COM TxPDO-Map Inputs^Status"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^PT100 (EL3214) (EL3214)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch1_Error" VarB="RTD Inputs Channel 1^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch1_Value" VarB="RTD Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch2_Error" VarB="RTD Inputs Channel 2^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch2_Value" VarB="RTD Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch3_Error" VarB="RTD Inputs Channel 3^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch3_Value" VarB="RTD Inputs Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch4_Error" VarB="RTD Inputs Channel 4^Status^Error" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.Ch4_Value" VarB="RTD Inputs Channel 4^Value"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.TI1.State" VarB="InfoData^State"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC-ECAT^BUS-ETCAT^Power Supply (EL9110)">
+				<Link VarA="PlcTask Inputs^P00_Mapping.PS1.PowerOK" VarB="PowerOK^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^P00_Mapping.PS1.State" VarB="InfoData^State"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

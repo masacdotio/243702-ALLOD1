@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="P2_01_Production_Seq" Id="{5a5d1c07-9e49-48a1-be11-985e53e8835d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P2_01_Production_Seq
+VAR
+	tDuration_TON				:ARRAY[0..10] OF TON;
+	tDuration					:ARRAY[0..10] OF TIME;
+	bRunning					:BOOL;
+	
+	trigStart					:R_TRIG;
+	trigSkip					:R_TRIG;
+	trigPrev					:R_TRIG;
+	trigJump					:R_TRIG;
+	
+	iCountTotalProcess			:INT;
+	iNoProceses					:INT;
+	tTotalTime					:TON;
+	trigResetTotal				:R_TRIG;
+	
+	bProcessRunning				:BOOL;
+	bProcessFinish				:BOOL;
+
+	iMaxNumberOfProcess			:INT;
+	
+	bPreviousStep				:BOOL;
+END_VAR
+
+VAR PERSISTENT
+	bStartProcess				:BOOL;
+	bStopProcess				:BOOL;
+	
+	iProcess					:INT;
+	iStepPrev					:INT;
+	iProcessPrev				:INT;
+	iStep						:INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iMaxNumberOfProcess:=20;
+
+GV.iPP:=iProcess;
+IF iProcess > 1 THEN
+	GV.iPrevPP:=iProcess-1;
+END_IF
+
+
+// Terminate process
+IF GV.stControl.Stop THEN
+	iStep := 1000;
+END_IF
+
+//Jump requests
+trigStart(CLK:=GV.stControl.Running AND GV.iRecipeType=0);
+trigSkip(CLK:=GV.stControl.Next);
+trigPrev(CLK:=GV.stControl.Previous);
+trigJump(CLK:=GV.stControl.Jump);
+
+IF trigPrev.Q THEN
+	bPreviousStep:=TRUE;
+END_IF
+
+//0 - Feeding
+//1 - Mixing
+//2 - Discharging
+
+//Protect iProcess of forcing online value
+IF iProcess < 1 THEN
+	iProcess := 1;
+ELSIF iProcess > iMaxNumberOfProcess THEN
+	iProcess := iMaxNumberOfProcess;
+END_IF
+
+IF Recipes.Production_Active.stPhase[iProcess].iType=0 THEN
+	bProcessRunning:=_Feeding.q_bRunning;
+	bProcessFinish:=_Feeding.q_bFinished;
+ELSIF Recipes.Production_Active.stPhase[iProcess].iType=1 THEN
+	bProcessRunning:=_Mixing.q_bRunning;
+	bProcessFinish:=_Mixing.q_bFinished;
+ELSIF Recipes.Production_Active.stPhase[iProcess].iType=2 THEN
+	bProcessRunning:=_Discharging.q_bRunning;
+	bProcessFinish:=_Discharging.q_bFinished;
+END_IF
+
+
+CASE iStep OF 
+	0:	
+		iProcess := 0;
+		iProcessPrev := 0;
+		IF trigStart.Q THEN
+			iProcess:=0;
+			iStep := 200;
+		END_IF
+		
+		IF iStep <> 0 THEN
+			iStepPrev := 0;
+		END_IF
+		
+	//Wait for process start
+	200:
+		bPreviousStep:=FALSE;
+		bStartProcess:=TRUE;
+		IF bProcessRunning THEN
+			iStep:=300;
+		END_IF
+		
+		IF iStep <> 200 THEN
+			iStepPrev := 200;
+		END_IF
+	//Process running	
+	300:
+		IF bProcessFinish THEN
+			iStep:=400;
+		//not neccessery to change state if not running - affect phase pause timers
+		ELSIF NOT GV.stControl.Running AND FALSE THEN
+			iStep:=500;
+		END_IF
+		
+		IF iStep <> 300 THEN
+			iStepPrev := 300;
+		END_IF
+	//Process finish
+	400:
+		bStartProcess:=FALSE;
+		bStopProcess:=TRUE;
+		IF NOT bProcessRunning THEN
+			bStopProcess:=FALSE;
+			IF iProcess > 0 AND iProcess < iMaxNumberOfProcess AND NOT bPreviousStep THEN
+				IF Recipes.Production_Active.stPhase[iProcess+1].bEnable THEN
+					iProcessPrev:=iProcess;
+					iProcess:=iProcess+1;
+					iStep:=200;
+				ELSE
+					iStep:=1000;
+				END_IF
+			ELSIF bPreviousStep THEN
+				iProcessPrev:=iProcess;
+				IProcess:=iProcess-1;
+				iStep:=200;
+			END_IF
+		END_IF
+		
+		IF iStep <> 400 THEN
+			iStepPrev := 400;
+		END_IF
+	500:
+		bStartProcess:=FALSE;
+		IF GV.stControl.Running THEN
+			iStep := 200;
+		END_IF
+	1000:
+		bStartProcess:=FALSE;
+		GV.stControl.Finish := TRUE;
+		iStep := 0;
+END_CASE
+
+
+
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

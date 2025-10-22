@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="IN" Id="{e5c6e337-ab60-4f3b-b1ee-ff1891d7f875}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+
+	bVoltageDC_Fault						:BOOL;
+	bCabinetFan_Fault						:BOOL;
+	bEmergencyStop							:BOOL;
+	bCompressedAirOK						:BOOL;
+	bDoorClosed								:BOOL;
+	bDoorLocked							    :BOOL;
+	
+	
+	bMixerFreqConv_Fault					:BOOL;
+	bChopper1Protection_Fault				:BOOL;
+	bChopper2Protection_Fault				:BOOL;
+
+	bDischargeFlap_Fixed					:BOOL;
+	bDischargeFlap_Opened					:BOOL;
+	bDischargeFlap_Closed					:BOOL;
+	bDischargeFlap_HalfOpen					:BOOL;
+
+	
+	iMixerSpeed								:INT;    //0..20mA
+	iMixerCurrent							:INT; 	//0..20mA	
+	iChopper1Current						:INT; 	//4..20mA
+	iChopper2Current						:INT; 	//4..20mA
+	iProductTemperature						:INT; 	//0..20mA 0-150 C
+	
+	iFlowMixerL								:INT;
+	iFlowMixerR							    :INT;
+	iFlowChopper1							:INT;
+	iFlowChopper2							:INT;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

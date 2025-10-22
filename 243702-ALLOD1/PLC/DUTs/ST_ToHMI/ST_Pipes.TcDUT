@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_Pipes" Id="{c739c0ae-75b8-4388-bae2-ec2e9a64dabb}">
+    <Declaration><![CDATA[TYPE ST_Pipes :
+STRUCT
+	
+	//0-OFF, 1-Air Blow, 2-Cold Water(PW), 3-Warm water, 4 - PW						
+
+
+	iWaterSupply							:INT; 	
+	iColdWater								:INT;
+	iWarmWater								:INT;
+	iWaterSelect							:INT;
+	iProcessWater							:INT;
+	iMainSupply								:INT;
+	iTightAir								:INT;
+	iChopper1								:INT;
+	iChopper2								:INT;
+	iChopper1Drain							:INT;
+	iChopper2Drain							:INT;
+	iChoppersDrain							:INT;
+	iMainDrain								:INT;	
+	iAirBlow								:INT;
+	iChopper1Air							:INT;
+	iChopper2Air							:INT;	
+
+	//0-OFF,1-Production OFF,2-Production ON,3-Cleaning OFF,4 Clening ON
+	iFluid									:INT;		
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="_Control" Id="{70adb00e-0856-4239-ad13-c67e1d58cdbc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM _Control
+VAR_INPUT
+	i_bStart						:BOOL;
+	i_bStepFinished					:BOOL;
+	i_bProcessFinished				:BOOL;
+	i_bSkipStep						:BOOL;
+END_VAR
+VAR
+	iStep							:INT;
+	tonStepTime						:TON;
+END_VAR
+VAR_OUTPUT
+	q_bRunning						:BOOL;
+	q_bFinished						:BOOL;
+	q_stCmd							:ST_ProcessCmd;
+	q_bReqFlapOpen					:BOOL;
+	q_bReqFlapClosed				:BOOL;
+	q_tStepTime						:TIME;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[q_bRunning:=iStep<>0;
+
+IF i_bSkipStep THEN
+	iStep:=1000;
+END_IF
+
+IF NOT i_bStart THEN
+	iStep:=0;
+END_IF
+
+CASE iStep OF
+	0:
+		IF i_bStart THEN
+			q_bFinished:=FALSE;
+			iStep:=50;
+		END_IF
+	
+	//Mixer and Choppers are rotating
+	50:
+		IF i_bProcessFinished THEN
+			iStep:=1000;
+		END_IF
+	
+		
+	1000:
+		q_bFinished:=TRUE;
+		IF i_bStepFinished THEN
+			iStep:=0;
+		END_IF
+END_CASE
+
+
+//Statistic and Status
+tonStepTime(IN:=q_bRunning,PT:=T#5H);
+q_tStepTime:=tonStepTime.ET;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

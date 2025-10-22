@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GV" Id="{784be946-b5ce-4a6d-aead-992b6d29a71d}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	{attribute 'OPC.UA.DA.StructuredType' := '1'}
+	stOPC							:ST_OPC;	
+
+	bIO_Card_Failure				:BOOL;
+
+	shunt							:BOOL;
+	bLogOut							:BOOL;
+
+	sEmptyString					:STRING:='';
+	
+	sAdminsitratorUser				:STRING:='__SystemAdministrator';
+	sDefaultUser					:STRING:='DefaultUser';
+	sSystemUser						:STRING:='__SystemUser';
+
+	stTime							:ST_Time;
+	stIPCDiag						:ST_Diagnostic;	
+	stHMI							:ST_HMI;
+	stToHMI							:ST_ToHMI;
+	
+
+	stAlarm							:ST_Alarm;
+	stReport						:ST_Report;
+	
+	
+	stCleaningCmd					:ST_ProcessCmd;
+	stProductionCmd					:ST_ProcessCmd;
+	stBlowingCmd					:ST_PRocessCmd;
+	stAutoProcessCmd				:ST_ProcessCmd;
+	
+	bFlapCloseAfterBatch			:BOOL;
+	
+	stTX_Python						:ST_TX_Python;
+	stRX_Python						:ST_RX_Python;
+	
+	bMixerL_Flow_OK					:BOOL;
+	bMixerR_Flow_OK					:BOOL;
+	bChopper1_Flow_OK				:BOOL;
+	bChopper2_Flow_OK				:BOOL;
+	
+	
+	bAlarmOK						:BOOL;
+	bMixerStopped					:BOOL;
+	bDisCloseReq					:BOOL;
+	bDisOpenReq						:BOOL;
+	
+	bUserLogged						:BOOL;
+	
+	iPP								:INT;
+	iCP								:INT;
+	
+	iPrevPP							:INT;
+	iPrevCP							:INT;
+	
+	bDisableNext					:BOOL;
+	bDisablePrev					:BOOL;
+	
+	sProdPhases						:ARRAY[0..2] OF STRING := ['Feeding','Mixing','Discharging'];
+	sCleanPhases					:ARRAY[0..6] OF STRING := ['Rinsing','Mount/Dismount','Main Clean','PW Clean','Draining','Blowing','Clean Control'];
+	sChopperModes					:ARRAY[0..2] OF STRING := ['OFF','ON','ON'];
+	sMixerModes						:ARRAY[0..4] OF STRING := ['OFF','ON/Forward','Interval','Backward','Alternate'];
+	sEndPoints						:ARRAY[0..1] OF STRING := ['Auto','Manual'];
+	sMediums						:ARRAY[0..2] OF STRING := ['Cold Water','Warm Water','Purified Water'];
+	sDetergent						:ARRAY[0..2] OF STRING := ['OFF','ON','ON'];
+
+	
+	
+	rMixerSpeed_AV					:REAL;
+	rMixerCurrent_AV				:REAL;
+	rChopper1Current_AV				:REAL;
+	rChopper2Current_AV				:REAL;
+	rProductTemperature_AV			:REAL;
+	rProductTemperature_RAW			:REAL;
+	
+	rMixerLFlow_AV					:REAL;
+	rMixerRFlow_AV					:REAL;
+	rChopper1Flow_AV				:REAL;
+	rChopper2Flow_AV				:REAL;
+	
+
+
+	
+END_VAR
+VAR_GLOBAL PERSISTENT
+	stSettings						:ST_Settings;
+	stBatch							:ST_Batch;
+	stBatches 						:ARRAY[0..9] OF ST_Batch;
+	stLastBatch						:ST_Batch;
+	stControl						:ST_Control;
+	sUserLogged						:STRING;
+	sGroupLogged					:STRING;
+	bBatchOpen						:BOOL;
+	bBatchClose						:BOOL;
+	bBatchBusy						:BOOL;
+	iRecipeType						:INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

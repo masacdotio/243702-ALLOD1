@@ -1,0 +1,2181 @@
+{
+    "recipeList": {
+        "Cleaning": {},
+        "Cleaning_Template": {
+            "recipeTypeName": "Cleaning",
+            "values": {
+                "ADS.PLC1.Recipes.Cleaning": {
+                    "iActivePhase": 0,
+                    "iType": 0,
+                    "sName": "''",
+                    "stInfo": {
+                        "bVerification": false,
+                        "iVersion": 0,
+                        "sTimeCreated": "''",
+                        "sTimeEdited": "''",
+                        "sTimeVerified": "''",
+                        "sUserCreated": "''",
+                        "sUserEdited": "''",
+                        "sUserVerified": "''"
+                    },
+                    "stPhase": [
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": "''"
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iDetergent": 0,
+                            "iMedium": 0,
+                            "iMixer": 0,
+                            "iTime1": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime2": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iTime3": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        }
+                    ]
+                }
+            }
+        },
+        "Production": {
+            "a": {
+                "recipeTypeName": "Production",
+                "values": {
+                    "ADS.PLC1.Recipes.Production": {
+                        "iActivePhase": 1,
+                        "iType": 0,
+                        "sName": "a",
+                        "stInfo": {
+                            "bVerification": false,
+                            "iVersion": 0,
+                            "sTimeCreated": "22-10-2025 15:10:27",
+                            "sTimeEdited": "22-10-2025 15:10:34",
+                            "sTimeVerified": "",
+                            "sUserCreated": "__SystemUser",
+                            "sUserEdited": "__SystemUser",
+                            "sUserVerified": ""
+                        },
+                        "stPhase": [
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": true,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            }
+                        ]
+                    }
+                }
+            },
+            "asdasdsa": {
+                "recipeTypeName": "Production",
+                "values": {
+                    "ADS.PLC1.Recipes.Production": {
+                        "iActivePhase": 1,
+                        "iType": 0,
+                        "sName": "asdasdsa",
+                        "stInfo": {
+                            "bVerification": false,
+                            "iVersion": 0,
+                            "sTimeCreated": "22-10-2025 15:05:35",
+                            "sTimeEdited": "",
+                            "sTimeVerified": "",
+                            "sUserCreated": "__SystemUser",
+                            "sUserEdited": "",
+                            "sUserVerified": ""
+                        },
+                        "stPhase": [
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": true,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "Production_Template": {
+            "recipeTypeName": "Production",
+            "values": {
+                "ADS.PLC1.Recipes.Production": {
+                    "iActivePhase": 0,
+                    "iType": 0,
+                    "sName": "''",
+                    "stInfo": {
+                        "bVerification": true,
+                        "iVersion": 0,
+                        "sTimeCreated": "''",
+                        "sTimeEdited": "''",
+                        "sTimeVerified": "''",
+                        "sUserCreated": "''",
+                        "sUserEdited": "''",
+                        "sUserVerified": "''"
+                    },
+                    "stPhase": [
+                        {
+                            "bEnable": true,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": "''"
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        },
+                        {
+                            "bEnable": false,
+                            "iChopper": 0,
+                            "iEndPoint": 0,
+                            "iMixing": 0,
+                            "iPhaseTime": {
+                                "mins": 0,
+                                "sec": 0
+                            },
+                            "iType": 0,
+                            "rMixingShaft_Speed": 0.0,
+                            "sDescription": ""
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "recipeTypeList": {
+        "Cleaning": {
+            "members": {
+                "ADS.PLC1.Recipes.Cleaning": {
+                    "defaultValue": {
+                        "iActivePhase": 0,
+                        "iType": 0,
+                        "sName": "''",
+                        "stInfo": {
+                            "bVerification": false,
+                            "iVersion": 0,
+                            "sTimeCreated": "''",
+                            "sTimeEdited": "''",
+                            "sTimeVerified": "''",
+                            "sUserCreated": "''",
+                            "sUserEdited": "''",
+                            "sUserVerified": "''"
+                        },
+                        "stPhase": [
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": "''"
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iDetergent": 0,
+                                "iMedium": 0,
+                                "iMixer": 0,
+                                "iTime1": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime2": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iTime3": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            }
+                        ]
+                    },
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.Recipes.Cleaning",
+                    "unit": "",
+                    "version": 1.0
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        },
+        "Production": {
+            "members": {
+                "ADS.PLC1.Recipes.Production": {
+                    "defaultValue": {
+                        "iActivePhase": 0,
+                        "iType": 0,
+                        "sName": "''",
+                        "stInfo": {
+                            "bVerification": true,
+                            "iVersion": 0,
+                            "sTimeCreated": "''",
+                            "sTimeEdited": "''",
+                            "sTimeVerified": "''",
+                            "sUserCreated": "''",
+                            "sUserEdited": "''",
+                            "sUserVerified": "''"
+                        },
+                        "stPhase": [
+                            {
+                                "bEnable": true,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": "''"
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            },
+                            {
+                                "bEnable": false,
+                                "iChopper": 0,
+                                "iEndPoint": 0,
+                                "iMixing": 0,
+                                "iPhaseTime": {
+                                    "mins": 0,
+                                    "sec": 0
+                                },
+                                "iType": 0,
+                                "rMixingShaft_Speed": 0.0,
+                                "sDescription": ""
+                            }
+                        ]
+                    },
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.Recipes.Production",
+                    "unit": "",
+                    "version": 1.0
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        }
+    }
+}

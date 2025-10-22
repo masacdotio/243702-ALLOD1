@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_ToHMI" Id="{43810a17-9a92-4573-829a-97a9f6932182}">
+    <Declaration><![CDATA[TYPE ST_ToHMI :
+STRUCT
+	stControlsEN				:ST_EnableControls;
+	stPipes						:ST_Pipes;
+	stDevices					:ST_Devices;
+	stStatus					:ST_Status;
+	stProcessVar				:ST_ProcessVar;
+	iRecipeProd_Number			:INT;
+	iRecipeClean_Number			:INT;
+	sReporth_OpenPath			:STRING;
+	sAudit_OpenPath				:STRING;
+	sUserMan_OpenPath			:STRING;
+	iBatchStep					:INT;
+	
+	sUserLogged					:STRING;
+	sActiveBatch				:STRING;
+	sActiveRecipe				:STRING;
+	bBatchOpen					:BOOL;
+	
+	sMixingTime_VIS				:STRING;
+	sMixingDone_VIS				:STRING;
+	bDetergentConfirm_VIS		:BOOL;
+	bDischargeConfirm_VIS		:BOOL;
+	
+	bAlarm						:BOOL;
+	bAlarm_Blink				:BOOL;
+	
+	bUserTimeOut				:BOOL;
+	bUserLogOut					:BOOL;
+	bLogInDefaultUser			:BOOL;
+	
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

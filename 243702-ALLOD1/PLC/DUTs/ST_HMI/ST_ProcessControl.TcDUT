@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_ProcessControl" Id="{3a358a33-15ef-4345-856d-289208d9432e}">
+    <Declaration><![CDATA[TYPE ST_ProcessControl :
+STRUCT
+
+	bVacuumPump					:BOOL;
+	bFinishFeeding				:BOOL;
+	bEnableMixer				:BOOL;
+	bBarrelInPos				:BOOL;
+	bFinishDischarge			:BOOL;
+	bFinishDetergent			:BOOL;
+	bFinishMixing				:BOOL;
+	bFinishMounting				:BOOL;
+	bFinishControlOK			:BOOL;
+	bFinishControlNOK			:BOOL;
+	
+	
+	bBatchConfirm1				:BOOL;
+	bBatchConfirm2				:BOOL;
+	bBatchConfirm3				:BOOL;
+	bBatchConfirm4				:BOOL;
+	
+	bDischargeFlap_Open			:BOOL;
+	bDischargeFlap_HOpen		:BOOL;
+	bDischargeFlap_Close		:BOOL;
+	
+	bBlowing					:BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

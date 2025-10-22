@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_Settings" Id="{d3b5f858-a366-4023-b944-7d0e976b3f2b}">
+    <Declaration><![CDATA[TYPE ST_Settings :
+STRUCT
+	iReportProcesData_TimeStamp		:DINT;
+	iMixerInterval_Run_sec			:DINT;
+	iMixerInterval_Pause_sec		:DINT;
+	iMixerAlternate_Run_sec			:DINT;
+	iMixerAlternate_Pause_sec		:DINT;
+	iAutoLogOutTimeOut_min			:DINT;
+	rProductTemperature_Offset		:REAL;
+	
+	rMixerL_Flow_ThresholdMin		:REAL;
+	rMixerR_Flow_ThresholdMin		:REAL;
+	rChopper1_Flow_ThresholdMin		:REAL;
+	rChopper2_Flow_ThresholdMin		:REAL;
+	
+	rMixerL_Flow_ThresholdMax		:REAL;
+	rMixerR_Flow_ThresholdMax		:REAL;
+	rChopper1_Flow_ThresholdMax		:REAL;
+	rChopper2_Flow_ThresholdMax		:REAL;
+	
+	bDischargeFlap_Manual			:BOOL;
+	iDischargeFlap_TimeOut			:DINT;
+	iDischargeFlapHalf_TimeOut		:DINT;
+	
+	rMixerDischargeSpeed			:REAL;
+	iBlowingChopperCmd				:INT;
+	iBlowingMixerCmd				:INT;
+	rBlowingMixerSpeed				:REAL;
+	iFillingChopperOnTime			:DINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

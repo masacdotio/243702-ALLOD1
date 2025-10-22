@@ -1,0 +1,189 @@
+{
+  "$schema": "../../TcHmiSrv/schema/ExtensionSettings.Schema.json",
+  "version": "14.4.176.0",
+  "configVersion": "1.0.1.2",
+  "guid": "202AA035-2258-492E-965D-DE1EA9D12D59",
+  "visibility": "AlwaysShow",
+  "policies": [
+    "StrictPropertyValidation"
+  ],
+  "symbols": {
+    "ActivateRecipe": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true
+      },
+      "writeValue": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    "ReadFromTarget": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true,
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "values": {
+            "type": "object",
+            "additionalProperties": {}
+          }
+        }
+      },
+      "writeValue": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    "UpdateRecipe": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true,
+        "type": "object",
+        "properties": {
+          "info": {
+            "description": "List of updates made",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "writeValue": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    "GetRecipes": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true,
+        "type": "array",
+        "items": {
+          "recipes": {
+            "type": "string"
+          }
+        }
+      },
+      "writeValue": {
+        "type": "object",
+        "properties": {
+          "recipeTypePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "recipeTypePath"
+        ]
+      }
+    },
+    "GetActiveRecipes": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true,
+        "type": "array",
+        "items": {
+          "recipe": {
+            "type": "string"
+          }
+        }
+      },
+      "writeValue": {
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "recipe name(s)"
+            }
+          },
+          {
+            "$ref": "tchmi:general#/definitions/VOID"
+          }
+        ]
+      }
+    },
+    "ListRecipes": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true
+      }
+    },
+    "ListRecipeTypes": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true
+      }
+    },
+    "Diagnostics": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "type": "object",
+        "function": true,
+        "properties": {
+          "recipeNames": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          },
+          "recipeTypeNames": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "packageVersion": "22.0.7303",
+  "productVersion": "14.4.176.0",
+  "signature": "GuzZgYLPFMvNSPfzaebxe5gI+JU1YADTcfVqlIWpzWoSOPIZC+4K1Po6MMCh2d3JGfwajkMJqrslhuH8pYDNgxtDGsbllEyrkn5TEY5h7/DsIY8feA+wnPfWN5lpmb52QKkw62AwDgSRngJ/x58ezpa9iWil1C7FfSh0bU/36pnpd0kW/YRd4MTNodjMJL4UTh0F4vpRU1AnNdWiUt4sGZQ3ES4OCgRCCiadXcjBfCcmCf9KrLEtdQwZM7ipEkjlp5c3HX0EkLqjdZCsPUXCqfteIWp3BB2g7izBSz+lFdLPHwLLPBTThMVD8r4c2frqTc4pHfMAMMIAUInIW3Ilww=="
+}
