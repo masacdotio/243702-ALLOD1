@@ -136,6 +136,13 @@
                 ],
                 "asyncWait": true,
                 "waitMode": "Synchronous"
+              },
+              {
+                "objectType": "ControlApiFunction",
+                "active": true,
+                "control": "TcHmiPopup_Recipe_Prod",
+                "fn": "close",
+                "asyncWait": true
               }
             ]
           },
@@ -181,17 +188,17 @@
                 ],
                 "asyncWait": true,
                 "waitMode": "Synchronous"
+              },
+              {
+                "objectType": "ControlApiFunction",
+                "active": true,
+                "control": "TcHmiPopup_Recipe_Clean",
+                "fn": "close",
+                "asyncWait": true
               }
             ]
           }
         ],
-        "asyncWait": true
-      },
-      {
-        "objectType": "ControlApiFunction",
-        "active": true,
-        "control": "TcHmiPopup_Recipe_Prod",
-        "fn": "close",
         "asyncWait": true
       }
     ]

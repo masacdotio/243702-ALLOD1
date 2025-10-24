@@ -38,16 +38,16 @@
       "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
       "frameworkUserControlConfig": "UserControl\\Device_SingleValve.usercontrol.json",
-      "type": "object",
-      "id": "tchmi:project#/definitions/Device_SingleValve"
+      "id": "tchmi:project#/definitions/Device_SingleValve",
+      "type": "object"
     },
     "Device_Motor": {
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
       "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
       "frameworkUserControlConfig": "UserControl\\Device_Motor.usercontrol.json",
-      "type": "object",
-      "id": "tchmi:project#/definitions/Device_Motor"
+      "id": "tchmi:project#/definitions/Device_Motor",
+      "type": "object"
     },
     "Device_Coil": {
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
@@ -62,8 +62,8 @@
       "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
       "frameworkUserControlConfig": "UserControl\\Device_Chopper.usercontrol.json",
-      "type": "object",
-      "id": "tchmi:project#/definitions/Device_Chopper"
+      "id": "tchmi:project#/definitions/Device_Chopper",
+      "type": "object"
     },
     "ButtonDropDown_System": {
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
@@ -94,6 +94,1081 @@
         "$ref": "tchmi:general#/definitions/String"
       },
       "type": "array"
+    },
+    "PLC1.ARRAY_1..5_OF-BOOL": {
+      "items": {
+        "$ref": "tchmi:general#/definitions/BOOL"
+      },
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "startOffset": 1
+    },
+    "PLC1.FB_Valve_Ctrl": {
+      "additionalProperties": {},
+      "properties": {
+        "bCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 25
+            }
+          ]
+        },
+        "i_AutoCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "i_EnableHP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        },
+        "i_EnableWP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 7
+            }
+          ]
+        },
+        "i_HP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 8
+            }
+          ]
+        },
+        "i_Interlocks": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.ARRAY_1..5_OF-BOOL"
+            },
+            {
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "i_ManCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "i_ProcesslocksOK": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "i_ServiceMode": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "i_Timeout": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "propertyOrder": 10
+            }
+          ]
+        },
+        "i_WP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 9
+            }
+          ]
+        },
+        "q_Faulted": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 20
+            }
+          ]
+        },
+        "q_InterlocksOK": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 11
+            }
+          ]
+        },
+        "q_bCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 13
+            }
+          ]
+        },
+        "q_bEnabled": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 12
+            }
+          ]
+        },
+        "q_bHP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 14
+            }
+          ]
+        },
+        "q_bHP_Timeout": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 17
+            }
+          ]
+        },
+        "q_bTraveling": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 16
+            }
+          ]
+        },
+        "q_bWP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 15
+            }
+          ]
+        },
+        "q_bWP_Timeout": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 18
+            }
+          ]
+        },
+        "q_cmd_Timeout": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 19
+            }
+          ]
+        },
+        "tofDelayOut": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TOF"
+            },
+            {
+              "propertyOrder": 24
+            }
+          ]
+        },
+        "tonTimeoutCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 23
+            }
+          ]
+        },
+        "tonTimeoutHP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 21
+            }
+          ]
+        },
+        "tonTimeoutWP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 22
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "i_Interlocks",
+        "i_ProcesslocksOK",
+        "i_AutoCmd",
+        "i_ManCmd",
+        "i_ServiceMode",
+        "i_EnableHP",
+        "i_EnableWP",
+        "i_HP",
+        "i_WP",
+        "i_Timeout",
+        "q_InterlocksOK",
+        "q_bEnabled",
+        "q_bCmd",
+        "q_bHP",
+        "q_bWP",
+        "q_bTraveling",
+        "q_bHP_Timeout",
+        "q_bWP_Timeout",
+        "q_cmd_Timeout",
+        "q_Faulted",
+        "tonTimeoutHP",
+        "tonTimeoutWP",
+        "tonTimeoutCmd",
+        "tofDelayOut",
+        "bCmd"
+      ]
+    },
+    "PLC1.Tc2_Standard.TOF": {
+      "additionalProperties": {},
+      "properties": {
+        "ET": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "elapsed time",
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "IN": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "starts timer with falling edge, resets timer with rising edge",
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "M": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "PT": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "time to pass, before Q is set",
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "Q": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "is FALSE, PT seconds after IN had a falling edge",
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "StartTime": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "IN",
+        "PT",
+        "Q",
+        "ET",
+        "M",
+        "StartTime"
+      ]
+    },
+    "PLC1.Tc2_Standard.TON": {
+      "additionalProperties": {},
+      "properties": {
+        "ET": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "elapsed time",
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "IN": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "starts timer with rising edge, resets timer with falling edge",
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "M": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "PT": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "time to pass, before Q is set",
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "Q": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "gets TRUE, delay time (PT) after a rising edge at IN",
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "StartTime": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "IN",
+        "PT",
+        "Q",
+        "ET",
+        "M",
+        "StartTime"
+      ]
+    },
+    "Array(1..5) OF String": {
+      "items": {
+        "$ref": "tchmi:general#/definitions/String"
+      },
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "PLC1.ARRAY_1..5_OF-BOOL2": {
+      "items": {
+        "$ref": "tchmi:general#/definitions/BOOL"
+      },
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "startOffset": 1
+    },
+    "PLC1.FB_Mixer_Ctrl": {
+      "additionalProperties": {},
+      "properties": {
+        "bCmdBcw": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 17
+            }
+          ]
+        },
+        "bCmdFwd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 16
+            }
+          ]
+        },
+        "i_AutoCmdBcw": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "i_AutoCmdFwd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "i_AutoSpeedSP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "i_CurrentAP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 10
+            }
+          ]
+        },
+        "i_Interlocks": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.ARRAY_1..5_OF-BOOL"
+            },
+            {
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "i_ManCmdBcw": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        },
+        "i_ManCmdFwd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "i_ManSpeedSP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 8
+            }
+          ]
+        },
+        "i_ManStop": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 7
+            }
+          ]
+        },
+        "i_ServiceMode": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 11
+            }
+          ]
+        },
+        "i_SpeedAP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 9
+            }
+          ]
+        },
+        "q_InterlocksOK": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 12
+            }
+          ]
+        },
+        "q_bCmdBcw": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 14
+            }
+          ]
+        },
+        "q_bCmdFwd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 13
+            }
+          ]
+        },
+        "q_rSpeedSP": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 15
+            }
+          ]
+        },
+        "tofCMDBcw": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TOF"
+            },
+            {
+              "propertyOrder": 19
+            }
+          ]
+        },
+        "tofCMDFwd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TOF"
+            },
+            {
+              "propertyOrder": 18
+            }
+          ]
+        },
+        "tonBcwOff": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 21
+            }
+          ]
+        },
+        "tonFwdOff": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 20
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "i_Interlocks",
+        "i_AutoCmdFwd",
+        "i_AutoCmdBcw",
+        "i_AutoSpeedSP",
+        "i_ManCmdFwd",
+        "i_ManCmdBcw",
+        "i_ManStop",
+        "i_ManSpeedSP",
+        "i_SpeedAP",
+        "i_CurrentAP",
+        "i_ServiceMode",
+        "q_InterlocksOK",
+        "q_bCmdFwd",
+        "q_bCmdBcw",
+        "q_rSpeedSP",
+        "bCmdFwd",
+        "bCmdBcw",
+        "tofCMDFwd",
+        "tofCMDBcw",
+        "tonFwdOff",
+        "tonBcwOff"
+      ]
+    },
+    "PLC1.ARRAY_1..5_OF-BOOL3": {
+      "items": {
+        "$ref": "tchmi:general#/definitions/BOOL"
+      },
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "startOffset": 1
+    },
+    "PLC1.FB_Chopper_Ctrl": {
+      "additionalProperties": {},
+      "properties": {
+        "I_ManStop": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        },
+        "bCmdFast": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 14
+            }
+          ]
+        },
+        "bCmdSlow": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 13
+            }
+          ]
+        },
+        "i_AutoFastCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "i_AutoSlowCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "i_Interlocks": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.ARRAY_1..5_OF-BOOL"
+            },
+            {
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "i_ManFastCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "i_ManSlowCmd": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "i_ServiceMode": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 8
+            }
+          ]
+        },
+        "i_rSpeed": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 7
+            }
+          ]
+        },
+        "q_InterlocksOK": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 9
+            }
+          ]
+        },
+        "q_bCmdFast": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 10
+            }
+          ]
+        },
+        "q_bCmdSlow": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 11
+            }
+          ]
+        },
+        "q_rSpeed": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/REAL"
+            },
+            {
+              "propertyOrder": 12
+            }
+          ]
+        },
+        "tofFastCMD": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TOF"
+            },
+            {
+              "propertyOrder": 16
+            }
+          ]
+        },
+        "tofSlowCMD": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TOF"
+            },
+            {
+              "propertyOrder": 15
+            }
+          ]
+        },
+        "tonFastOff": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 18
+            }
+          ]
+        },
+        "tonSlowOff": {
+          "allOf": [
+            {
+              "$ref": "tchmi:project#/definitions/PLC1.Tc2_Standard.TON"
+            },
+            {
+              "propertyOrder": 17
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "i_Interlocks",
+        "i_AutoSlowCmd",
+        "i_AutoFastCmd",
+        "i_ManSlowCmd",
+        "i_ManFastCmd",
+        "I_ManStop",
+        "i_rSpeed",
+        "i_ServiceMode",
+        "q_InterlocksOK",
+        "q_bCmdFast",
+        "q_bCmdSlow",
+        "q_rSpeed",
+        "bCmdSlow",
+        "bCmdFast",
+        "tofSlowCMD",
+        "tofFastCMD",
+        "tonSlowOff",
+        "tonFastOff"
+      ]
+    },
+    "PLC1.Tc2_Standard.TOF3": {
+      "additionalProperties": {},
+      "properties": {
+        "ET": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "elapsed time",
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "IN": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "starts timer with falling edge, resets timer with rising edge",
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "M": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "PT": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "time to pass, before Q is set",
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "Q": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "is FALSE, PT seconds after IN had a falling edge",
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "StartTime": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "IN",
+        "PT",
+        "Q",
+        "ET",
+        "M",
+        "StartTime"
+      ]
+    },
+    "PLC1.Tc2_Standard.TON3": {
+      "additionalProperties": {},
+      "properties": {
+        "ET": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "elapsed time",
+              "propertyOrder": 4
+            }
+          ]
+        },
+        "IN": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "starts timer with rising edge, resets timer with falling edge",
+              "propertyOrder": 1
+            }
+          ]
+        },
+        "M": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "propertyOrder": 5
+            }
+          ]
+        },
+        "PT": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "comment": "time to pass, before Q is set",
+              "propertyOrder": 2
+            }
+          ]
+        },
+        "Q": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            {
+              "comment": "gets TRUE, delay time (PT) after a rising edge at IN",
+              "propertyOrder": 3
+            }
+          ]
+        },
+        "StartTime": {
+          "allOf": [
+            {
+              "$ref": "tchmi:general#/definitions/TIME"
+            },
+            {
+              "propertyOrder": 6
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "IN",
+        "PT",
+        "Q",
+        "ET",
+        "M",
+        "StartTime"
+      ]
     }
   }
 }

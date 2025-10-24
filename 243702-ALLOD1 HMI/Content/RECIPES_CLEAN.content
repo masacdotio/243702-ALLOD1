@@ -1,4 +1,4 @@
-<div id="RECIPES_CLEAN_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1920" data-tchmi-height="950">
+<div id="RECIPES_CLEAN_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1920" data-tchmi-height="950" data-tchmi-creator-locked="True">
 
 <div id="RecipesClean_Footer_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="890" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-zindex="20" data-tchmi-creator-locked="False">
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -138,66 +138,13 @@
 
 
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
     "actions": [
-      {
-        "objectType": "Comment",
-        "comment": "Audit"
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%s%PLC1.GV.stHMI.stAudit_Ctrl.bScanPhases%/s%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/BOOL",
-          "value": true
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%s%PLC1.GV.stHMI.stAudit_Ctrl.bScanRecipeParams%/s%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/BOOL",
-          "value": true
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%s%PLC1.P4_01_Write.bRecipeCleanChange.29%/s%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/BOOL",
-          "value": true
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "Comment",
-        "comment": "Hide recipe information"
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_InfoVisibility%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/String",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "Comment",
-        "comment": "Change screen"
-      },
       {
         "objectType": "WriteToSymbol",
         "active": true,
@@ -208,315 +155,18 @@
           "value": "Content/RECIPES/RECIPE_CLEAN_CREATE.content"
         },
         "asyncWait": true
-      },
-      {
-        "objectType": "Comment",
-        "comment": "Write empty structure to Recpie"
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%s%PLC1.GV.stRecipe%/s%",
-        "value": {
-          "objectType": "Symbol",
-          "valueType": "tchmi:general#/definitions/String",
-          "symbolExpression": "%s%PLC1.GV.stEmptyRecipe%/s%"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%s%PLC1.GV.stHMI.stRecipeClean%/s%",
-        "value": {
-          "objectType": "Symbol",
-          "valueType": "tchmi:general#/definitions/String",
-          "symbolExpression": "%s%PLC1.GV.stEmptyRecipeClean%/s%"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "Comment",
-        "comment": "Hide delete button when creating new recipe"
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_DeleteButtonVisibility%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/String",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "Comment",
-        "comment": "Show only first phase at start"
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_NumOfPhases%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/INT",
-          "value": 1
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_SelectedPhase%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/INT",
-          "value": 1
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesScrolling%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/String",
-          "value": "No"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[1]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Visible"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[2]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[3]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[4]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[5]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[6]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[7]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[8]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[9]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[10]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[11]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[12]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[13]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[14]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[15]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[16]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[17]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[18]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[19]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
-      },
-      {
-        "objectType": "WriteToSymbol",
-        "active": true,
-        "symbolExpression": "%i%RecipeClean_PhasesVisibility[20]%/i%",
-        "value": {
-          "objectType": "StaticValue",
-          "valueType": "tchmi:general#/definitions/STRING(80)",
-          "value": "Collapsed"
-        },
-        "asyncWait": true
       }
     ]
   }
-]</script>
+]
+</script>
 </div>
 </div>
 <div id="Recipe_datagrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="826" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="50" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-header-height="40" data-tchmi-header-font-size="25" data-tchmi-row-height="40" data-tchmi-grid-font-size="23" data-tchmi-row-numbers-font-size="20" data-tchmi-row-numbers-width="40" data-tchmi-zindex="2" data-tchmi-creator-locked="False" data-tchmi-row-numbers-font-family="Arial" data-tchmi-row-numbers-font-weight="Bold" data-tchmi-header-font-weight="Normal" data-tchmi-header-font-family="Arial" data-tchmi-grid-font-family="Arial" data-tchmi-table-border-width="1" data-tchmi-src-data="%i%RecipeList_Clean%/i%">
 <script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
 [
   {
-    "name": "sName",
+    "name": "",
     "label": "%l%RecipeName%/l%",
     "control": "TextBlock",
     "width": 100,
@@ -616,62 +266,7 @@
 
 
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
-  {
-    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
-    "actions": [
-      {
-        "objectType": "Comment",
-        "comment": "Value to PLC - Selected recipe"
-      },
-      {
-        "objectType": "Condition",
-        "active": true,
-        "parts": [
-          {
-            "if": [
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/Any",
-                  "symbolExpression": "%ctx%owner::selectedRowValue%/ctx%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/Any",
-                  "value": null
-                },
-                "compareOperator": "!=",
-                "logic": null
-              }
-            ],
-            "then": [
-              {
-                "objectType": "Function",
-                "active": true,
-                "fn": "TcHmi.Functions.Beckhoff.ActivateRecipe",
-                "fnParams": [
-                  {
-                    "objectType": "Symbol",
-                    "valueType": "tchmi:general#/definitions/String",
-                    "symbolExpression": "%f%'Cleaning::'+%ctx%owner::selectedRowValue%/ctx%%/f%"
-                  }
-                ],
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "else": []
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  }
-]
-</script>
+
 
 <script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
 [
@@ -722,6 +317,72 @@
   }
 ]
 </script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/Any",
+                  "symbolExpression": "%ctx%owner::selectedRowValue%/ctx%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Any",
+                  "value": null
+                },
+                "compareOperator": "!=",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "Function",
+                "active": true,
+                "fn": "TcHmi.Functions.Beckhoff.ActivateRecipe",
+                "fnParams": [
+                  {
+                    "objectType": "Symbol",
+                    "valueType": "tchmi:general#/definitions/String",
+                    "symbolExpression": "%f%'Cleaning::'+%ctx%owner::selectedRowValue%/ctx%%/f%"
+                  }
+                ],
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%MAIN_region::TargetContent%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/ContentPath",
+                  "value": "Content/RECIPES/RECIPE_CLEAN_EDIT.content"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": []
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
 <div id="Recipe_txt_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="%l%CleaningRecipes%/l%" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1880" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="25" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-zindex="3" data-tchmi-text-font-family="Arial" data-tchmi-creator-locked="False">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
@@ -755,4 +416,56 @@
 }
 </script>
 </div>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onAttached",
+    "actions": [
+      {
+        "objectType": "Comment",
+        "comment": "Read all production recipes"
+      },
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "TcHmi.Server.RecipeManagement.listRecipes(function (data) {",
+          "    if (data.error === 0) {",
+          "        const recipes = data.value.Cleaning;",
+          "        console.log(recipes);",
+          "        const productionRecipes = [];",
+          "",
+          "        // Loop through all recipes",
+          "        for (const recipeName in recipes) {",
+          "            if (recipes.hasOwnProperty(recipeName)) {",
+          "                const recipe = recipes[recipeName];",
+          "",
+          "                // Check if recipeTypeName is 'Production'",
+          "                if (recipe.recipeTypeName === 'Cleaning') {",
+          "                    productionRecipes.push(recipeName);",
+          "                }",
+          "            }",
+          "        }",
+          "",
+          "        // Write only Production recipe names to the symbol",
+          "        TcHmi.Symbol.writeEx('%i%RecipeList_Clean%/i%', productionRecipes, function (result) {",
+          "            if (result.error === TcHmi.Errors.NONE) {",
+          "                //console.log('Production recipe names updated successfully:', productionRecipes);",
+          "            } else {",
+          "                console.error('Failed to write production recipe names to symbol:', result.errorMessage);",
+          "            }",
+          "        });",
+          "    } else {",
+          "        console.error('Error fetching recipes:', data.errorMessage);",
+          "    }",
+          "});"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
 </div>

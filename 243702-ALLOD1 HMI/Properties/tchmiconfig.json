@@ -149,6 +149,27 @@
       "preloadBindings": false
     },
     {
+      "url": "Content/POPUP/Machine_Pause.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/POPUP/Machine_Start.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/POPUP/Machine_Stop.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
       "url": "Content/POPUP/Recipe_delete.content",
       "preload": false,
       "keepAlive": false,
@@ -290,6 +311,13 @@
     },
     {
       "url": "Content/RECIPES/RECIPE_CLEAN_CREATE.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/RECIPES/RECIPE_CLEAN_EDIT.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
@@ -531,13 +559,134 @@
         "type": "tchmi:general#/definitions/INT",
         "persist": false,
         "readonly": false
+      },
+      "RecipeClean_SelectedPhase": {
+        "value": 0,
+        "type": "tchmi:general#/definitions/INT",
+        "persist": false,
+        "readonly": false
+      },
+      "ServiceTags_Visibility": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
       }
     },
     "themedResources": {},
     "timer": {}
   },
   "intervals": {},
-  "trigger": [],
+  "trigger": [
+    {
+      "event": "onInitialized",
+      "actions": [
+        {
+          "objectType": "Comment",
+          "comment": "Set current user and group in PLC"
+        },
+        {
+          "objectType": "JavaScript",
+          "active": true,
+          "sourceLines": [
+            "var user = TcHmi.Server.getCurrentUser();",
+            "var group = TcHmi.Server.getGroupsOfCurrentUser();",
+            "var symbol_user = new TcHmi.Symbol('%s%ADS.PLC1.GV.sUserLogged%/s%');",
+            "var symbol_group = new TcHmi.Symbol('%s%ADS.PLC1.GV.sGroupLogged%/s%');",
+            "if (user) {",
+            "    symbol_user.write(user, function (data) {    ",
+            "    });",
+            "\t",
+            "}",
+            "if (group) {",
+            "\tsymbol_group.write(group[0], function (data) {    ",
+            "    });",
+            "}"
+          ],
+          "asyncWait": true,
+          "waitMode": "Synchronous"
+        }
+      ]
+    },
+    {
+      "event": "onUserChanged",
+      "actions": [
+        {
+          "objectType": "Comment",
+          "comment": "Set current user and group in PLC"
+        },
+        {
+          "objectType": "JavaScript",
+          "active": true,
+          "sourceLines": [
+            "var user = TcHmi.Server.getCurrentUser();",
+            "var group = TcHmi.Server.getGroupsOfCurrentUser();",
+            "var symbol_user = new TcHmi.Symbol('%s%ADS.PLC1.GV.sUserLogged%/s%');",
+            "var symbol_group = new TcHmi.Symbol('%s%ADS.PLC1.GV.sGroupLogged%/s%');",
+            "if (user) {",
+            "    symbol_user.write(user, function (data) {    ",
+            "    });",
+            "\t",
+            "}",
+            "if (group) {",
+            "\tsymbol_group.write(group[0], function (data) {    ",
+            "    });",
+            "}"
+          ],
+          "asyncWait": true,
+          "waitMode": "Synchronous"
+        }
+      ]
+    },
+    {
+      "event": "%s%ADS.PLC1.GV.bLogOut%/s%",
+      "actions": [
+        {
+          "objectType": "Condition",
+          "active": true,
+          "parts": [
+            {
+              "if": [
+                {
+                  "compare1": {
+                    "objectType": "Symbol",
+                    "valueType": "tchmi:general#/definitions/BOOL",
+                    "symbolExpression": "%s%PLC1.GV.bLogOut%/s%"
+                  },
+                  "compare2": {
+                    "objectType": "StaticValue",
+                    "valueType": "tchmi:general#/definitions/BOOL",
+                    "value": true
+                  },
+                  "compareOperator": "==",
+                  "logic": null
+                }
+              ],
+              "then": [
+                {
+                  "objectType": "Function",
+                  "active": true,
+                  "fn": "TcHmi.Functions.Beckhoff.LogoutEx",
+                  "fnParams": [
+                    {
+                      "objectType": "StaticValue",
+                      "valueType": "tchmi:general#/definitions/Boolean",
+                      "value": true
+                    }
+                  ],
+                  "asyncWait": true
+                }
+              ]
+            },
+            {
+              "else": []
+            }
+          ],
+          "asyncWait": true
+        }
+      ]
+    }
+  ],
   "actionTemplates": [],
   "languages": {
     "en": "Localization/en.localization",

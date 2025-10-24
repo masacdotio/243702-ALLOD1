@@ -10,7 +10,11 @@ END_VAR
       <ST><![CDATA[Recipes.Production.stPhase[1].bEnable := TRUE;
 Recipes.Production_Phase_HMI.bEnable := TRUE;
 
+Recipes.Cleaning.stPhase[1].bEnable := TRUE;
+Recipes.Cleaning_Phase_HMI.bEnable := TRUE;
+
 Recipes.Production.iActivePhase := 0;
+Recipes.Cleaning.iActivePhase := 0;
 
 FOR i := 1 TO 20 DO
 	IF Recipes.Production.stPhase[i].bEnable THEN
@@ -19,6 +23,14 @@ FOR i := 1 TO 20 DO
 	
 	IF NOT Recipes.Production.stPhase[i].bEnable THEN
 		Recipes.Production.stPhase[i] := Recipes.Production_Empty.stPhase[0];
+	END_IF
+	
+	IF Recipes.Cleaning.stPhase[i].bEnable THEN
+		Recipes.Cleaning.iActivePhase := i;
+	END_IF
+	
+	IF NOT Recipes.Cleaning.stPhase[i].bEnable THEN
+		Recipes.Cleaning.stPhase[i] := Recipes.Cleaning_Empty.stPhase[0];
 	END_IF
 END_FOR]]></ST>
     </Implementation>

@@ -5,6 +5,7 @@
 VAR_INPUT
 	i_bOpen						:BOOL; 
 	i_bClose					:BOOL; 
+	i_iRecipeType				:INT;
 	i_sBatchID					:STRING; 
 	i_sBatchSubID				:STRING;
 	i_sRecipe					:STRING;
@@ -44,6 +45,7 @@ CASE iStep OF
 		END_IF
 		
 	50:
+		q_stParams.sRecipeType:=SEL(i_iRecipeType=0,'Cleaning','Production');
 		IF i_sBatchSubID <> '0' THEN
 			q_stParams.sBatchNumber:=CONCAT(i_sBatchID,'-');
 			q_stParams.sBatchNumber:=CONCAT(q_stParams.sBatchNumber,i_sBatchSubID);

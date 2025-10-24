@@ -151,10 +151,19 @@
     <Content Include="Content\PID_4.content">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Content\POPUP\Machine_Stop.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\POPUP\Machine_Pause.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Content\POPUP\Recipe_delete.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\POPUP\Recipe_rename.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\POPUP\Machine_Start.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\POPUP\Recipe_save.content">
@@ -167,6 +176,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\RECIPES\RECIPE_CLEAN_CONTROL_MAN.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\RECIPES\RECIPE_CLEAN_EDIT.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\RECIPES\RECIPE_CLEAN_CREATE.content">
@@ -284,6 +296,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\Icons\Icon_rename.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Icons\Icon_verified_gn.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Icons\Icon_verified_rd.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\Logos\EN.png">
@@ -547,6 +565,15 @@
     <Content Include="Images\PID\wave_static_PK.png">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Config.default.json">
       <SubType>Content</SubType>
     </Content>
@@ -649,6 +676,7 @@
     <Folder Include="KeyboardLayouts\" />
     <Folder Include="Localization" />
     <Folder Include="Content" />
+    <Folder Include="Server\TcHmiEventLogger" />
     <Folder Include="Server\TcHmiRecipeManagement" />
     <Folder Include="UserControl" />
     <Folder Include="Themes" />

@@ -9,8 +9,8 @@ STRUCT
 	bClose			:BOOL;
 	bLoad			:BOOL;
 	
-	sName			:STRING;
-	iNumber			:UDINT;
+	iNumber			:ULINT;
+	iSubNumber		:UDINT;
 	sProduct		:STRING;
 	sComment		:STRING;
 	sRecipe			:STRING;
